@@ -5,6 +5,7 @@ import MenuScreen from "./components/MenuScreen";
 import IntroScreen from "./components/IntroScreen";
 import GameScreen from "./components/GameScreen";
 import AuthorScreen from "./components/AuthorScreen";
+import MemoryGame from "./components/MemoryGame";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/intro" element={<IntroScreen />} />
           <Route path="/game" element={<GameScreen />} />
           <Route path="/author" element={<AuthorScreen />} />
+          <Route path="/memory" element={<MemoryGame />} />
         </Routes>
       </div>
     </Router>

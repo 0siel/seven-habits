@@ -14,14 +14,15 @@ function IntroScreen() {
           The 7 Habits of Highly Effective People
         </h2>
         <img
-          src="/placeholder-7-habits.jpg"
+          // Import image from public folder
+          src="/7habitos.png"
           alt="7 Habits"
-          className="w-full h-64 object-cover rounded-lg mb-6"
+          //Show entire height of image
+          className="w-full h-97 object-contain rounded-lg mb-6"
         />
         <p className="text-lg">
-          Learn how the 7 habits can transform your personal and professional
-          life. These time-tested principles are designed to help you achieve
-          success and fulfillment.
+          Aprende como los 7 hábitos de las personas altamente efectivas pueden
+          ayudarte a alcanzar tus metas y ser más exitoso.
         </p>
       </div>
 
@@ -30,18 +31,15 @@ function IntroScreen() {
 
       {/* 10 Principles Section */}
       <div className="flex flex-col items-center bg-white text-black rounded-lg shadow-lg w-full md:w-3/4 lg:w-2/3 p-8">
-        <h2 className="text-3xl font-semibold mb-4">
-          The 10 Principles for Success
-        </h2>
+        <h2 className="text-3xl font-semibold mb-4">Decálogo del dasarrollo</h2>
         <img
-          src="/placeholder-10-principles.jpg"
+          src="1.png"
           alt="10 Principles"
-          className="w-full h-64 object-cover rounded-lg mb-6"
+          className="w-full h-95 object-cover rounded-lg mb-6"
         />
         <p className="text-lg">
-          Discover 10 actionable principles that will guide you toward achieving
-          your greatest potential. Apply these strategies to unlock a new level
-          of success.
+          Descubre los 10 principios que utilizan los paises desarrollados para
+          alcanzar el exito y la prosperidad.
         </p>
       </div>
     </div>
