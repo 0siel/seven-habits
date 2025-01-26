@@ -102,22 +102,129 @@ const triviaQuestions = [
   },
 ];
 
+const decalogoQuestions = [
+  {
+    question:
+      "¿Qué principio del Decálogo implica poner cada cosa en su lugar?",
+    options: ["Orden", "Limpieza", "Puntualidad", "Responsabilidad"],
+    answer: "Orden",
+  },
+  {
+    question:
+      "¿Qué principio destaca que la limpieza exterior refleja la limpieza interior?",
+    options: [
+      "Limpieza",
+      "Honradez",
+      "Deseo de superación",
+      "Gusto por el trabajo",
+    ],
+    answer: "Limpieza",
+  },
+  {
+    question:
+      "¿Qué principio relaciona la puntualidad con el respeto hacia los demás?",
+    options: [
+      "Puntualidad",
+      "Orden",
+      "Respeto al derecho de los demás",
+      "Responsabilidad",
+    ],
+    answer: "Puntualidad",
+  },
+  {
+    question: "¿Cómo definen los anglosajones el principio de responsabilidad?",
+    options: [
+      "Habilidad de responder",
+      "Hacer la tarea",
+      "Cumplir promesas",
+      "Ser puntual",
+    ],
+    answer: "Habilidad de responder",
+  },
+  {
+    question:
+      "¿Qué principio promueve competir contra uno mismo para superarse?",
+    options: [
+      "Deseo de superación",
+      "Honradez",
+      "Gusto por el trabajo",
+      "Ahorro e inversión",
+    ],
+    answer: "Deseo de superación",
+  },
+  {
+    question: "¿Qué principio se define como no tener dos agendas?",
+    options: [
+      "Honradez",
+      "Limpieza",
+      "Respeto a la ley y los reglamentos",
+      "Orden",
+    ],
+    answer: "Honradez",
+  },
+  {
+    question: "¿Qué frase famosa dijo Benito Juárez sobre el respeto?",
+    options: [
+      "El respeto al derecho ajeno es la paz",
+      "Haz lo que más te gusta",
+      "A la hora exacta",
+      "Habilidad de responder",
+    ],
+    answer: "El respeto al derecho ajeno es la paz",
+  },
+  {
+    question:
+      "¿Qué principio destaca la importancia de cumplir con reglas claras?",
+    options: [
+      "Respeto a la ley y los reglamentos",
+      "Orden",
+      "Limpieza",
+      "Honradez",
+    ],
+    answer: "Respeto a la ley y los reglamentos",
+  },
+  {
+    question:
+      "¿Qué principio menciona que nadie alcanza el éxito sin disfrutar lo que hace?",
+    options: [
+      "Gusto por el trabajo",
+      "Deseo de superación",
+      "Puntualidad",
+      "Ahorro e inversión",
+    ],
+    answer: "Gusto por el trabajo",
+  },
+  {
+    question: "¿Qué principio fomenta hábitos de ahorro e inversión?",
+    options: [
+      "Ahorro e inversión",
+      "Deseo de superación",
+      "Responsabilidad",
+      "Limpieza",
+    ],
+    answer: "Ahorro e inversión",
+  },
+];
+
 function GameScreen() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
+  const [isDecalogo, setIsDecalogo] = useState(false);
+
+  const questions = isDecalogo ? decalogoQuestions : triviaQuestions;
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
   };
 
   const handleNextQuestion = () => {
-    if (selectedOption === triviaQuestions[currentQuestionIndex].answer) {
+    if (selectedOption === questions[currentQuestionIndex].answer) {
       setScore(score + 1);
     }
     setSelectedOption(null);
-    if (currentQuestionIndex + 1 < triviaQuestions.length) {
+    if (currentQuestionIndex + 1 < questions.length) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       setShowScore(true);
@@ -131,13 +238,26 @@ function GameScreen() {
     setShowScore(false);
   };
 
+  const toggleQuiz = () => {
+    setIsDecalogo(!isDecalogo);
+    handleRestart();
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center p-4">
-      <h1 className="text-3xl font-bold mb-6">7 Hábitos Trivia Game</h1>
+      <h1 className="text-3xl font-bold mb-6">
+        {isDecalogo ? "Decálogo Trivia Game" : "7 Hábitos Trivia Game"}
+      </h1>
+      <button
+        onClick={toggleQuiz}
+        className="px-4 py-2 mb-4 bg-purple-500 text-white rounded hover:bg-purple-600"
+      >
+        {isDecalogo ? "Cambiar a 7 Hábitos" : "Cambiar a Decálogo"}
+      </button>
       {showScore ? (
         <div>
           <p className="text-lg font-medium mb-4">
-            ¡Obtuviste {score} de {triviaQuestions.length} puntos!
+            ¡Obtuviste {score} de {questions.length} puntos!
           </p>
           <button
             onClick={handleRestart}
@@ -149,32 +269,34 @@ function GameScreen() {
       ) : (
         <div>
           <p className="text-lg font-medium mb-4">
-            {triviaQuestions[currentQuestionIndex].question}
+            {questions[currentQuestionIndex].question}
           </p>
           <div className="flex flex-col gap-2 mb-4">
-            {triviaQuestions[currentQuestionIndex].options.map(
-              (option, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleOptionClick(option)}
-                  className={`px-4 py-2 rounded border text-left ${
-                    selectedOption === option
-                      ? "bg-blue-500 text-white"
-                      : "bg-white hover:bg-gray-100"
-                  }`}
-                >
-                  {option}
-                </button>
-              )
-            )}
+            {questions[currentQuestionIndex].options.map((option, index) => (
+              <button
+                key={index}
+                onClick={() => handleOptionClick(option)}
+                className={`px-4 py-2 rounded border text-left ${
+                  selectedOption === option
+                    ? "bg-blue-500 text-white"
+                    : "bg-white hover:bg-gray-100"
+                }`}
+              >
+                {option}
+              </button>
+            ))}
           </div>
           <button
             onClick={handleNextQuestion}
-            className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 disabled:opacity-50"
             disabled={!selectedOption}
+            className={`px-4 py-2 rounded ${
+              selectedOption
+                ? "bg-green-500 text-white hover:bg-green-600"
+                : "bg-gray-300 text-gray-500 cursor-not-allowed"
+            }`}
           >
-            {currentQuestionIndex + 1 === triviaQuestions.length
-              ? "Finalizar"
+            {currentQuestionIndex + 1 === questions.length
+              ? "Ver Resultados"
               : "Siguiente Pregunta"}
           </button>
         </div>
