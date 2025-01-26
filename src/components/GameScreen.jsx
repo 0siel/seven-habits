@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
 
 const triviaQuestions = [
   {
@@ -212,6 +214,7 @@ function GameScreen() {
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [isDecalogo, setIsDecalogo] = useState(false);
+  const { width, height } = useWindowSize();
 
   const questions = isDecalogo ? decalogoQuestions : triviaQuestions;
 
@@ -245,6 +248,9 @@ function GameScreen() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center p-4">
+      {showScore && score === questions.length && (
+        <Confetti width={width} height={height} numberOfPieces={300} />
+      )}
       <h1 className="text-3xl font-bold mb-6">
         {isDecalogo ? "Decálogo Trivia Game" : "7 Hábitos Trivia Game"}
       </h1>
@@ -259,6 +265,11 @@ function GameScreen() {
           <p className="text-lg font-medium mb-4">
             ¡Obtuviste {score} de {questions.length} puntos!
           </p>
+          {score === questions.length && (
+            <p className="text-xl font-bold text-green-600">
+              ¡Perfecto! 🎉 ¡Felicidades, eres un experto!
+            </p>
+          )}
           <button
             onClick={handleRestart}
             className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
