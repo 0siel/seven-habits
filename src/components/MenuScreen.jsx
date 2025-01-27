@@ -8,7 +8,7 @@ function MenuScreen() {
     <div className="flex flex-col items-center justify-center w-screen min-h-screen bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-white">
       {/* Title */}
       <h1 className="text-5xl font-extrabold mb-12 animate-fade-in">
-        🌟 Main Menu 🌟
+        🌟 MENÚ PRINCIPAL 🌟
       </h1>
 
       {/* Buttons */}
@@ -17,19 +17,19 @@ function MenuScreen() {
           onClick={() => navigate("/intro")}
           className="px-10 py-4 bg-green-500 text-white text-xl font-bold rounded-lg shadow-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105"
         >
-          Introduction
+          Introducción
         </button>
         <button
           onClick={() => navigate("/game")}
           className="px-10 py-4 bg-purple-500 text-white text-xl font-bold rounded-lg shadow-lg hover:bg-purple-600 transition-all duration-300 transform hover:scale-105"
         >
-          Start Game
+          Comenzar
         </button>
         <button
           onClick={() => navigate("/author")}
           className="px-10 py-4 bg-gray-800 text-white text-xl font-bold rounded-lg shadow-lg hover:bg-gray-900 transition-all duration-300 transform hover:scale-105"
         >
-          About Author
+          Autor
         </button>
       </div>
 

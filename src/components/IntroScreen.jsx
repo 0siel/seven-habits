@@ -5,13 +5,13 @@ function IntroScreen() {
     <div className="flex flex-col items-center justify-center w-screen min-h-screen bg-gradient-to-b from-purple-500 via-blue-600 to-blue-800 text-white px-6 py-12">
       {/* Title */}
       <h1 className="text-5xl font-extrabold mb-12 text-center">
-        Introduction to Success Principles
+        Introducción
       </h1>
 
       {/* 7 Habits Section */}
       <div className="flex flex-col items-center bg-white text-black rounded-lg shadow-lg mb-12 w-full md:w-3/4 lg:w-2/3 p-8">
         <h2 className="text-3xl font-semibold mb-4">
-          The 7 Habits of Highly Effective People
+          Los 7 hábitos de las personas altamente efectivas
         </h2>
         <img
           // Import image from public folder

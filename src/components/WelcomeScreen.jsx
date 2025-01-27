@@ -12,8 +12,8 @@ function WelcomeScreen() {
           🎮 7 Habits Game
         </h1>
         <p className="text-xl font-light">
-          Learn the secrets of highly effective people through a fun and
-          interactive game!
+          Aprende los 7 hábitos de las personas altamente efectivas a través de
+          un juego interactivo.
         </p>
       </div>
 
@@ -22,7 +22,7 @@ function WelcomeScreen() {
         onClick={() => navigate("/menu")}
         className="mt-10 px-8 py-4 bg-black text-blue-600 text-lg font-bold rounded-lg shadow-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
       >
-        Get Started 🚀
+        Comenzar 🚀
       </button>
 
       {/* Decorative Elements */}
