@@ -9,6 +9,7 @@ function ImageCollage() {
 
     "https://lowell.edu/wp-content/uploads/2020/02/unnamed-32.jpg",
     "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2017/03/16145151/ronaldo-messi.jpg",
+    "",
   ];
 
   return (

@@ -33,7 +33,7 @@ function IntroScreen() {
       <div className="flex flex-col items-center bg-white text-black rounded-lg shadow-lg w-full md:w-3/4 lg:w-2/3 p-8">
         <h2 className="text-3xl font-semibold mb-4">Decálogo del dasarrollo</h2>
         <img
-          src="1.png"
+          src="/1.png"
           alt="10 Principles"
           className="w-full h-95 object-cover rounded-lg mb-6"
         />
