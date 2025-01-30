@@ -14,17 +14,25 @@ function MenuScreen() {
       {/* Buttons */}
       <div className="space-y-6">
         <button
-          onClick={() => navigate("/intro")}
+          onClick={() => navigate("/seven/intro")}
           className="px-10 py-4 bg-green-500 text-white text-xl font-bold rounded-lg shadow-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105"
         >
           Introducción
         </button>
         <button
-          onClick={() => navigate("/game")}
+          onClick={() => navigate("/seven/game")}
           className="px-10 py-4 bg-purple-500 text-white text-xl font-bold rounded-lg shadow-lg hover:bg-purple-600 transition-all duration-300 transform hover:scale-105"
         >
           Comenzar
         </button>
+
+        <button
+          onClick={() => navigate("/seven/memory")}
+          className="px-10 py-4 bg-gray-800 text-white text-xl font-bold rounded-lg shadow-lg hover:bg-gray-900 transition-all duration-300 transform hover:scale-105"
+        >
+          Memory
+        </button>
+
         <button
           onClick={() => navigate("/author")}
           className="px-10 py-4 bg-gray-800 text-white text-xl font-bold rounded-lg shadow-lg hover:bg-gray-900 transition-all duration-300 transform hover:scale-105"

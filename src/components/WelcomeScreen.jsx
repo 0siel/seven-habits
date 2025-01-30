@@ -9,20 +9,27 @@ function WelcomeScreen() {
       {/* Logo Section */}
       <div className="text-center mb-8">
         <h1 className="text-6xl font-extrabold mb-4 animate-bounce">
-          🎮 7 Habits Game
+          Recursos para el Éxito
         </h1>
         <p className="text-xl font-light">
-          Aprende los 7 hábitos de las personas altamente efectivas a través de
-          un juego interactivo.
+          Una biblioteca de recursos interctivos para alcanzar tus metas y ser
+          más exitoso. 🚀
         </p>
       </div>
 
       {/* Start Button */}
       <button
-        onClick={() => navigate("/menu")}
+        onClick={() => navigate("/seven/menu")}
         className="mt-10 px-8 py-4 bg-black text-blue-600 text-lg font-bold rounded-lg shadow-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
       >
-        Comenzar 🚀
+        7 Hábitos de la Gente Altamente Efectiva - Decálogo de Mavila
+      </button>
+
+      <button
+        onClick={() => navigate("kasuga/menu")}
+        className="mt-4 px-8 py-4 bg-black text-blue-600 text-lg font-bold rounded-lg shadow-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
+      >
+        Motivación - Educación con valores y Virtudes
       </button>
 
       {/* Decorative Elements */}
