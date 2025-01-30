@@ -17,19 +17,11 @@ import MemoryGame from "./components/seven/MemoryGame";
   /* Kasuga imports */
 }
 
-{
-  /*
-  import { ExplanationScreen as KasugaExplanationScreen } from "./components/kasuga/ExplanationScreen";
+import KasugaExplanationScreen from "./components/kasuga/ExplanationScreen";
 
+import KasugaGameScreen from "./components/kasuga/GameScreen";
 
-
-
-import { GameScreen as KasugaGameScreen } from "./components/kasuga/GameScreen";
-
-import { MenuScreen as KasugaMenuScreen } from "./components/seven/MenuScreen";
-
-*/
-}
+import KasugaMenuScreen from "./components/kasuga/MenuScreen";
 
 function App() {
   return (
@@ -45,18 +37,14 @@ function App() {
           <Route path="seven/memory" element={<MemoryGame />} />
           {/* Kasuga routes */}
 
-          {/*
-
           <Route path="kasuga/menu" element={<KasugaMenuScreen />} />
 
           <Route
             path="kasuga/explanation"
             element={<KasugaExplanationScreen />}
           />
-          
-          <Route path="kasuga/game" element={<KasugaGameScreen />} />
 
-          */}
+          <Route path="kasuga/game" element={<KasugaGameScreen />} />
         </Routes>
       </div>
     </Router>
