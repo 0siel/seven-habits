@@ -37,7 +37,7 @@ const Game = () => {
   const startBuffer = useRef(200);
 
   // Game constants
-  const GRAVITY = 0.4;
+  const GRAVITY = 0.3;
   const JUMP_POWER = -7;
   const OBSTACLE_SPEED = 2;
   const CANVAS_WIDTH = 320;
