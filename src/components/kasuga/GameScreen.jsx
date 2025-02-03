@@ -38,7 +38,7 @@ const Game = () => {
 
   // Game constants
   const GRAVITY = 0.4;
-  const JUMP_POWER = -8;
+  const JUMP_POWER = -7;
   const OBSTACLE_SPEED = 3;
   const CANVAS_WIDTH = 320;
   const CANVAS_HEIGHT = 480;
@@ -85,7 +85,7 @@ const Game = () => {
       );
 
       if (obstacles.current.length < 2) {
-        const isImpossibleWall = Math.random() < 0.3;
+        const isImpossibleWall = Math.random() < 0.1;
         if (isImpossibleWall) {
           setShowQuestion(true);
           setCurrentQuestion(
