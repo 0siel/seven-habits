@@ -39,7 +39,7 @@ const Game = () => {
   // Game constants
   const GRAVITY = 0.4;
   const JUMP_POWER = -7;
-  const OBSTACLE_SPEED = 3;
+  const OBSTACLE_SPEED = 2;
   const CANVAS_WIDTH = 320;
   const CANVAS_HEIGHT = 480;
 
@@ -51,7 +51,7 @@ const Game = () => {
 
     ctx.fillStyle = "red";
     obstacles.current.forEach((obstacle) => {
-      ctx.fillRect(obstacle.x, obstacle.y, 40, 200);
+      ctx.fillRect(obstacle.x, obstacle.y, 40, 100);
     });
   }, []);
 
