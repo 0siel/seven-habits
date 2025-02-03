@@ -39,8 +39,8 @@ const Game = () => {
   const GRAVITY = 0.4;
   const JUMP_POWER = -8;
   const OBSTACLE_SPEED = 3;
-  const CANVAS_WIDTH = 500;
-  const CANVAS_HEIGHT = 400;
+  const CANVAS_WIDTH = 320;
+  const CANVAS_HEIGHT = 480;
 
   const drawScene = useCallback((ctx) => {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -84,7 +84,7 @@ const Game = () => {
       );
 
       if (obstacles.current.length < 2) {
-        const isImpossibleWall = Math.random() < 0.3; // 30% chance to trigger a question
+        const isImpossibleWall = Math.random() < 0.3;
         if (isImpossibleWall) {
           setShowQuestion(true);
           setCurrentQuestion(
@@ -141,8 +141,8 @@ const Game = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
-      <h1 className="text-3xl font-bold mb-4">Flappy Quiz Game</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
+      <h1 className="text-2xl font-bold mb-4 text-center">Flappy Quiz Game</h1>
       <canvas
         ref={canvasRef}
         width={CANVAS_WIDTH}
@@ -152,23 +152,27 @@ const Game = () => {
       {!showQuestion && (
         <button
           onClick={handleJump}
-          className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700"
+          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700"
         >
           Jump
         </button>
       )}
       {!gameRunning && (
-        <p className="text-red-500 mt-4">Game Over! Refresh to Restart.</p>
+        <p className="text-red-500 mt-4 text-center">
+          Game Over! Refresh to Restart.
+        </p>
       )}
       {showQuestion && (
-        <div className="mt-4 bg-white text-black p-4 rounded-lg shadow-lg">
-          <p className="text-lg font-semibold">{currentQuestion.question}</p>
+        <div className="mt-4 bg-white text-black p-4 rounded-lg shadow-lg w-full max-w-xs">
+          <p className="text-lg font-semibold text-center">
+            {currentQuestion.question}
+          </p>
           <div className="mt-2 space-y-2">
             {currentQuestion.options.map((option, index) => (
               <button
                 key={index}
                 onClick={() => handleAnswer(option)}
-                className="block w-full px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700"
+                className="block w-full px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700 text-center"
               >
                 {option}
               </button>
