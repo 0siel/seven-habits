@@ -28,6 +28,7 @@ const Game = () => {
   const [gameRunning, setGameRunning] = useState(true);
   const [showQuestion, setShowQuestion] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(null);
+  const [score, setScore] = useState(0);
   const playerY = useRef(150);
   const velocity = useRef(0);
   const obstacles = useRef([]);
@@ -95,6 +96,7 @@ const Game = () => {
             x: CANVAS_WIDTH,
             y: Math.random() * (CANVAS_HEIGHT - 100),
           });
+          setScore((prevScore) => prevScore + 1);
         }
       }
     },
@@ -135,6 +137,7 @@ const Game = () => {
   const handleAnswer = (answer) => {
     if (answer === currentQuestion.answer) {
       setShowQuestion(false);
+      setScore((prevScore) => prevScore + 5);
     } else {
       setGameRunning(false);
     }
@@ -143,11 +146,12 @@ const Game = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
       <h1 className="text-2xl font-bold mb-4 text-center">Flappy Quiz Game</h1>
+      <p className="text-lg font-semibold">Score: {score}</p>
       <canvas
         ref={canvasRef}
         width={CANVAS_WIDTH}
         height={CANVAS_HEIGHT}
-        className="border border-white"
+        className="border border-white mt-2"
       />
       {!showQuestion && (
         <button
