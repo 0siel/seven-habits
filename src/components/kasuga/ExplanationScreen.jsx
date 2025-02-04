@@ -28,29 +28,78 @@ function ExplanationScreen() {
           <div className="flex space-x-4 p-4">
             {[
               {
-                title: "Respeto",
+                title: "Introducción",
                 description:
-                  "La base de toda relación saludable y del desarrollo personal.",
+                  "En la charla Educación con valores y virtudes de Carlos Kasuga, se presentan varios conceptos clave que son fundamentales para el desarrollo personal y profesional. Aquí te los explico:",
               },
               {
-                title: "Responsabilidad",
-                description:
-                  "Asumir las consecuencias de nuestras acciones y decisiones.",
+                title: "Ideas y conceptos presentados:",
+                description: "",
               },
               {
-                title: "Honestidad",
+                title: "Compromiso personal:",
                 description:
-                  "Ser sincero y transparente en nuestras acciones y palabras.",
+                  "Kasuga enfatiza la importancia de comprometerse primero con uno mismo antes de comprometerse con los demás. Este compromiso es la base para construir una vida y una sociedad de alta calidad.",
               },
               {
-                title: "Empatía",
+                title: "Valores y virtudes:",
                 description:
-                  "Comprender y respetar los sentimientos de los demás.",
+                  "La charla destaca la necesidad de inculcar valores como la honestidad, la responsabilidad, el respeto y la integridad en la educación y en la vida diaria.",
               },
               {
-                title: "Disciplina",
+                title:
+                  "Principios del Bien Ser, Bien Hacer, Bien Estar y Bien Tener: ",
                 description:
-                  "El hábito clave para lograr el éxito en cualquier área de la vida.",
+                  "Estos principios son fundamentales para lograr una vida equilibrada y exitosa.",
+              },
+              {
+                title: "Importancia",
+                description: "",
+              },
+              {
+                title: "Compromiso personal: ",
+                description:
+                  "Es crucial porque establece una base sólida para todas las acciones y decisiones que tomamos. Sin un compromiso personal, es difícil mantener la consistencia y la integridad en nuestras vidas.",
+              },
+              {
+                title: "Valores y virtudes: ",
+                description:
+                  "Son esenciales para construir relaciones saludables y una sociedad justa. Los valores y virtudes guían nuestro comportamiento y nos ayudan a tomar decisiones éticas.",
+              },
+              {
+                title:
+                  "Principios del Bien Ser, Bien Hacer, Bien Estar y Bien Tener:",
+                description:
+                  "Estos principios proporcionan una guía integral para vivir una vida plena y significativa.",
+              },
+              {
+                title: "Implementación:",
+                description: "",
+              },
+              {
+                title: "Cuándo:",
+                description:
+                  "Estos conceptos deben ser implementados de manera continua en nuestra vida diaria. No hay un momento específico; es un proceso constante de autoevaluación y mejora.",
+              },
+              {
+                title: "Dónde:",
+                description:
+                  "En todos los aspectos de nuestra vida: en el hogar, en el trabajo, en la comunidad y en nuestras relaciones personales.",
+              },
+              {
+                title: "Compromiso personal:",
+                description:
+                  "Reflexiona sobre tus valores y establece metas personales que estén alineadas con ellos. Mantén la integridad y la consistencia en tus acciones.",
+              },
+              {
+                title: "Valores y virtudes:",
+                description:
+                  "Practica la honestidad, la responsabilidad y el respeto en todas tus interacciones. Educa a los demás, especialmente a los jóvenes, sobre la importancia de estos valores.",
+              },
+              {
+                title: "Bien Ser, Bien Hacer, Bien Estar y Bien Tener:",
+                description:
+                  "Bien Ser, Bien Hacer, Bien Estar y Bien Tener: Trabaja en tu desarrollo personal, realiza tus tareas con excelencia, cuida tu bienestar físico y mental, y gestiona tus recursos de manera ética y responsable.",
               },
             ].map((card, index) => (
               <div
@@ -75,8 +124,8 @@ function ExplanationScreen() {
 
         {/* Image */}
         <img
-          src="/ck.png"
-          alt="Kasuga"
+          src="/jk.png"
+          alt="Kenji"
           className="w-full h-97 object-contain rounded-lg mb-6"
         />
 
@@ -85,34 +134,101 @@ function ExplanationScreen() {
           <div className="flex space-x-4 p-4">
             {[
               {
-                title: "Respeto",
+                title: "Introduccion",
                 description:
-                  "La base de toda relación saludable y del desarrollo personal.",
+                  "En el video de Yokoi Kenji titulado MOTIVACIÓN, se presentan varias ideas y conceptos clave sobre la motivación y la mentalidad. Aquí te explico cada uno de ellos, su importancia, y cómo podemos implementarlos en nuestra vida diaria:",
               },
               {
-                title: "Responsabilidad",
-                description:
-                  "Asumir las consecuencias de nuestras acciones y decisiones.",
+                title: "Ideas y conceptos presentados:",
+                description: "",
               },
               {
-                title: "Honestidad",
+                title: "Realidad vs. Ilusión:",
                 description:
-                  "Ser sincero y transparente en nuestras acciones y palabras.",
+                  "Kenji destaca la diferencia entre la realidad y las ilusiones que se presentan en las redes sociales. Advierte contra idealizar vidas que parecen perfectas en línea y nos anima a aceptar la realidad de que la mayoría de las personas deben trabajar arduamente para lograr el éxito",
               },
               {
-                title: "Empatía",
+                title: "Sentido de Vida (Ikigai):",
                 description:
-                  "Comprender y respetar los sentimientos de los demás.",
+                  "Menciona el concepto japonés de ikigai, que se traduce como ''sentido de vida''. Este concepto se centra en trabajar hasta encontrar pasión en lo que hacemos, en lugar de buscar constantemente motivación externa.",
               },
               {
-                title: "Disciplina",
+                title: "Esfuerzo y Perseverancia:",
                 description:
-                  "El hábito clave para lograr el éxito en cualquier área de la vida.",
+                  "Kenji resalta la importancia del esfuerzo y la perseverancia en el trabajo. Ejemplifica con la anécdota de masajear un pulpo durante una hora, explicando que el esfuerzo y la dedicación son fundamentales para obtener buenos resultados.",
+              },
+              {
+                title: "Adaptación y Resiliencia:",
+                description:
+                  "Subraya la necesidad de adaptarse y ser resilientes ante las adversidades y los cambios inesperados. Menciona cómo los latinos tienen la capacidad de encontrar humor y soluciones en medio del caos.",
+              },
+              {
+                title: "Importancia de estos conceptos:",
+                description: "",
+              },
+              {
+                title: "Realidad vs. Ilusión:",
+                description:
+                  "Es fundamental para mantener una perspectiva realista y evitar decepciones causadas por expectativas poco realistas.",
+              },
+              {
+                title: "Sentido de Vida (Ikigai):",
+                description:
+                  "Nos ayuda a encontrar motivación intrínseca y propósito en nuestras actividades diarias.",
+              },
+              {
+                title: "Esfuerzo y Perseverancia: ",
+                description:
+                  "Son esenciales para alcanzar el éxito a largo plazo y superar los desafíos.",
+              },
+              {
+                title: "Adaptación y Resiliencia:",
+                description:
+                  "Nos permiten enfrentar situaciones adversas de manera efectiva y encontrar oportunidades en medio de las dificultades.",
+              },
+              {
+                title: "Implementación",
+                description: "",
+              },
+              {
+                title: "Cuándo: ",
+                description:
+                  "Estos conceptos deben ser implementados de manera continua en nuestra vida diaria.",
+              },
+
+              {
+                title: "Dónde:",
+                description:
+                  "En todos los aspectos de nuestra vida: en el hogar, en el trabajo, en la comunidad y en nuestras relaciones personales.",
+              },
+              {
+                title: "Cómo:",
+                description: "",
+              },
+              {
+                title: "Realidad vs. Ilusión: ",
+                description:
+                  "Mantén una perspectiva realista y enfócate en tus propios esfuerzos en lugar de compararte con los demás.",
+              },
+              {
+                title: "Sentido de Vida (Ikigai):",
+                description:
+                  "Encuentra actividades que te apasionen y que te den un sentido de propósito. Trabaja en ellas consistentemente hasta que sientas motivación intrínseca.",
+              },
+              {
+                title: "Esfuerzo y Perseverancia:",
+                description:
+                  "Dedica tiempo y esfuerzo a tus proyectos y tareas. No te desanimes ante los obstáculos; sigue adelante con determinación.",
+              },
+              {
+                title: "Adaptación y Resiliencia:",
+                description:
+                  "Aprende a adaptarte a los cambios y a ver los desafíos como oportunidades para crecer. Mantén una actitud positiva y busca soluciones creativas en situaciones difíciles.",
               },
             ].map((card, index) => (
               <div
                 key={index}
-                className="min-w-[80%] md:min-w-[40%] lg:min-w-[30%] bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="min-w-[80%] md:min-w-[40%] lg:min-w-[30%] bg-gray-100 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
               >
                 <h3 className="text-xl font-bold mb-2">{card.title}</h3>
                 <p className="text-gray-700">{card.description}</p>
