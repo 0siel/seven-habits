@@ -20,6 +20,8 @@ const Game = () => {
   }, [gameOver]);
 
   useEffect(() => {
+    if (gameOver) return; // Stop the game loop when the game is over
+
     const gameLoop = setInterval(() => {
       setBirdY((birdY) =>
         Math.min(Math.max(birdY + velocity, 0), window.innerHeight - 30)
@@ -39,7 +41,8 @@ const Game = () => {
             height: Math.random() * (window.innerHeight - OBSTACLE_GAP),
           },
         ]);
-        setScore((score) => score + 1);
+
+        setScore((score) => score + 1); // ✅ Score updates only if game is not over
       }
 
       // Collision detection
@@ -69,7 +72,7 @@ const Game = () => {
     }, 20);
 
     return () => clearInterval(gameLoop);
-  }, [birdY, velocity, obstacles, gameOver]);
+  }, [birdY, velocity, obstacles, gameOver]); // ✅ gameOver added to dependencies
 
   const isColliding = (rect1, rect2) => {
     return (
@@ -128,9 +131,11 @@ const Game = () => {
           </button>
         </div>
       )}
-      <div className="absolute top-4 left-4 text-white text-2xl">
-        Score: {score}
-      </div>
+      {!gameOver && (
+        <div className="absolute top-4 left-4 text-white text-2xl">
+          Score: {score}
+        </div>
+      )}
       <button
         className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 px-4 py-2 rounded ${
           gameOver ? "bg-gray-500 cursor-not-allowed" : "bg-yellow-500"
