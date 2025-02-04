@@ -23,6 +23,8 @@ import KasugaGameScreen from "./components/kasuga/GameScreen";
 
 import KasugaMenuScreen from "./components/kasuga/MenuScreen";
 
+import Flappy from "./components/flappy/Flappy";
+
 function App() {
   return (
     <Router>
@@ -45,6 +47,8 @@ function App() {
           />
 
           <Route path="kasuga/game" element={<KasugaGameScreen />} />
+
+          <Route path="flappy" element={<Flappy />} />
         </Routes>
       </div>
     </Router>

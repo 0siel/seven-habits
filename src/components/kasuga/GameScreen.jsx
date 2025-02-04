@@ -40,8 +40,8 @@ const Game = () => {
   const GRAVITY = 0.3;
   const JUMP_POWER = -7;
   const OBSTACLE_SPEED = 2;
-  const CANVAS_WIDTH = 320;
-  const CANVAS_HEIGHT = 480;
+  const CANVAS_WIDTH = 500;
+  const CANVAS_HEIGHT = 500;
 
   const drawScene = useCallback((ctx) => {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -74,7 +74,8 @@ const Game = () => {
         if (
           50 < obstacle.x + 40 &&
           50 + 30 > obstacle.x &&
-          playerY.current + 30 > obstacle.y
+          (playerY.current + 30 > obstacle.y ||
+            playerY.current < obstacle.y + 100)
         ) {
           setGameRunning(false);
         }
@@ -138,6 +139,11 @@ const Game = () => {
     if (answer === currentQuestion.answer) {
       setShowQuestion(false);
       setScore((prevScore) => prevScore + 5);
+
+      // Add a delay before resuming the game
+      setTimeout(() => {
+        startBuffer.current = 120; // 2 seconds delay (60 FPS * 2 seconds)
+      }, 0);
     } else {
       setGameRunning(false);
     }
