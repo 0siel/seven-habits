@@ -12,55 +12,91 @@ const OBSTACLE_WIDTH = 50;
 const quizQuestions = [
   {
     question:
-      "What is the first habit of the 7 Habits of Highly Effective People?",
+      "¿Qué concepto enfatiza la importancia de comprometerse primero con uno mismo antes de comprometerse con los demás?",
     options: [
-      "Be Proactive",
-      "Begin with the End in Mind",
-      "Put First Things First",
-      "Synergize",
+      "Compromiso personal",
+      "Valores y virtudes",
+      "Bien Hacer",
+      "Bien Tener",
     ],
-    answer: "Be Proactive",
+    answer: "Compromiso personal",
+  },
+  {
+    question: "¿Cuál de los siguientes valores NO se menciona en la charla?",
+    options: ["Humildad", "Honestidad", "Responsabilidad", "Respeto"],
+    answer: "Humildad",
+  },
+  {
+    question: "¿Por qué es crucial el compromiso personal?",
+    options: [
+      "Porque establece una base sólida para nuestras acciones y decisiones",
+      "Porque ayuda a conseguir más dinero",
+      "Porque mejora nuestra apariencia",
+      "Porque evita problemas en la sociedad",
+    ],
+    answer:
+      "Porque establece una base sólida para nuestras acciones y decisiones",
   },
   {
     question:
-      "Which habit encourages you to begin with a clear destination in mind?",
+      "¿Qué concepto guía nuestro comportamiento y ayuda a tomar decisiones éticas?",
     options: [
-      "Begin with the End in Mind",
-      "Think Win-Win",
-      "Seek First to Understand, Then to Be Understood",
-      "Sharpen the Saw",
+      "Valores y virtudes",
+      "Bien Tener",
+      "Compromiso personal",
+      "Bien Estar",
     ],
-    answer: "Begin with the End in Mind",
+    answer: "Valores y virtudes",
   },
   {
-    question: "What habit is about managing your time effectively?",
-    options: [
-      "Put First Things First",
-      "Be Proactive",
-      "Synergize",
-      "Think Win-Win",
-    ],
-    answer: "Put First Things First",
+    question:
+      "¿Cuál de los siguientes NO es un principio mencionado en la charla?",
+    options: ["Bien Actuar", "Bien Ser", "Bien Hacer", "Bien Tener"],
+    answer: "Bien Actuar",
   },
   {
-    question: "Which habit focuses on mutually beneficial relationships?",
+    question: "¿Cómo se puede implementar el compromiso personal?",
     options: [
-      "Think Win-Win",
-      "Be Proactive",
-      "Sharpen the Saw",
-      "Begin with the End in Mind",
+      "Reflexionando sobre los valores y estableciendo metas alineadas con ellos",
+      "Esperando a que otros nos guíen",
+      "Siguiendo siempre lo que hacen los demás",
+      "Tomando decisiones sin pensar en las consecuencias",
     ],
-    answer: "Think Win-Win",
+    answer:
+      "Reflexionando sobre los valores y estableciendo metas alineadas con ellos",
   },
   {
-    question: "Which habit involves continuous self-improvement?",
+    question:
+      "¿Qué principio enfatiza la excelencia en la realización de tareas?",
+    options: ["Bien Hacer", "Bien Ser", "Bien Estar", "Bien Tener"],
+    answer: "Bien Hacer",
+  },
+  {
+    question:
+      "¿En qué aspectos de la vida se deben implementar estos principios?",
     options: [
-      "Sharpen the Saw",
-      "Synergize",
-      "Seek First to Understand, Then to Be Understood",
-      "Put First Things First",
+      "En el hogar, el trabajo, la comunidad y relaciones personales",
+      "Solo en el trabajo",
+      "Solo en la comunidad",
+      "Solo en la vida personal",
     ],
-    answer: "Sharpen the Saw",
+    answer: "En el hogar, el trabajo, la comunidad y relaciones personales",
+  },
+  {
+    question: "¿Cómo se pueden inculcar valores y virtudes en los demás?",
+    options: [
+      "Practicándolos en nuestras interacciones y educando a los jóvenes",
+      "Diciéndole a los demás qué hacer sin dar ejemplo",
+      "Evadiendo la responsabilidad de enseñar valores",
+      "Solo promoviendo reglas estrictas sin explicaciones",
+    ],
+    answer: "Practicándolos en nuestras interacciones y educando a los jóvenes",
+  },
+  {
+    question:
+      "¿Qué principio está relacionado con el bienestar físico y mental?",
+    options: ["Bien Estar", "Bien Tener", "Bien Hacer", "Bien Ser"],
+    answer: "Bien Estar",
   },
 ];
 
