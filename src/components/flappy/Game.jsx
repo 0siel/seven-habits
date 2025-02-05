@@ -1,105 +1,76 @@
 import React, { useState, useEffect, useCallback } from "react";
 
-// Constants for physics and obstacles (we'll update OBSTACLE_GAP dynamically)
+// Fixed game dimensions for mobile devices
+const GAME_WIDTH = 400;
+const GAME_HEIGHT = 600;
+
+// Constants for physics and obstacles
 const GRAVITY = 0.6;
 const JUMP = -10;
 const OBSTACLE_WIDTH = 50;
 
 const quizQuestions = [
-  [
-    {
-      question:
-        "¿Qué concepto enfatiza la importancia de comprometerse primero con uno mismo antes de comprometerse con los demás?",
-      options: [
-        "Compromiso personal",
-        "Valores y virtudes",
-        "Bien Hacer",
-        "Bien Tener",
-      ],
-      answer: "Compromiso personal",
-    },
-    {
-      question: "¿Cuál de los siguientes valores NO se menciona en la charla?",
-      options: ["Humildad", "Honestidad", "Responsabilidad", "Respeto"],
-      answer: "Humildad",
-    },
-    {
-      question: "¿Por qué es crucial el compromiso personal?",
-      options: [
-        "Porque establece una base sólida para nuestras acciones y decisiones",
-        "Porque ayuda a conseguir más dinero",
-        "Porque mejora nuestra apariencia",
-        "Porque evita problemas en la sociedad",
-      ],
-      answer:
-        "Porque establece una base sólida para nuestras acciones y decisiones",
-    },
-    {
-      question:
-        "¿Qué concepto guía nuestro comportamiento y ayuda a tomar decisiones éticas?",
-      options: [
-        "Valores y virtudes",
-        "Bien Tener",
-        "Compromiso personal",
-        "Bien Estar",
-      ],
-      answer: "Valores y virtudes",
-    },
-    {
-      question:
-        "¿Cuál de los siguientes NO es un principio mencionado en la charla?",
-      options: ["Bien Actuar", "Bien Ser", "Bien Hacer", "Bien Tener"],
-      answer: "Bien Actuar",
-    },
-    {
-      question: "¿Cómo se puede implementar el compromiso personal?",
-      options: [
-        "Reflexionando sobre los valores y estableciendo metas alineadas con ellos",
-        "Esperando a que otros nos guíen",
-        "Siguiendo siempre lo que hacen los demás",
-        "Tomando decisiones sin pensar en las consecuencias",
-      ],
-      answer:
-        "Reflexionando sobre los valores y estableciendo metas alineadas con ellos",
-    },
-    {
-      question:
-        "¿Qué principio enfatiza la excelencia en la realización de tareas?",
-      options: ["Bien Hacer", "Bien Ser", "Bien Estar", "Bien Tener"],
-      answer: "Bien Hacer",
-    },
-    {
-      question:
-        "¿En qué aspectos de la vida se deben implementar estos principios?",
-      options: [
-        "En el hogar, el trabajo, la comunidad y relaciones personales",
-        "Solo en el trabajo",
-        "Solo en la comunidad",
-        "Solo en la vida personal",
-      ],
-      answer: "En el hogar, el trabajo, la comunidad y relaciones personales",
-    },
-    {
-      question: "¿Cómo se pueden inculcar valores y virtudes en los demás?",
-      options: [
-        "Practicándolos en nuestras interacciones y educando a los jóvenes",
-        "Diciéndole a los demás qué hacer sin dar ejemplo",
-        "Evadiendo la responsabilidad de enseñar valores",
-        "Solo promoviendo reglas estrictas sin explicaciones",
-      ],
-      answer:
-        "Practicándolos en nuestras interacciones y educando a los jóvenes",
-    },
-    {
-      question:
-        "¿Qué principio está relacionado con el bienestar físico y mental?",
-      options: ["Bien Estar", "Bien Tener", "Bien Hacer", "Bien Ser"],
-      answer: "Bien Estar",
-    },
-  ],
+  {
+    question:
+      "What is the first habit of the 7 Habits of Highly Effective People?",
+    options: [
+      "Be Proactive",
+      "Begin with the End in Mind",
+      "Put First Things First",
+      "Synergize",
+    ],
+    answer: "Be Proactive",
+  },
+  {
+    question:
+      "Which habit encourages you to begin with a clear destination in mind?",
+    options: [
+      "Begin with the End in Mind",
+      "Think Win-Win",
+      "Seek First to Understand, Then to Be Understood",
+      "Sharpen the Saw",
+    ],
+    answer: "Begin with the End in Mind",
+  },
+  {
+    question: "What habit is about managing your time effectively?",
+    options: [
+      "Put First Things First",
+      "Be Proactive",
+      "Synergize",
+      "Think Win-Win",
+    ],
+    answer: "Put First Things First",
+  },
+  {
+    question: "Which habit focuses on mutually beneficial relationships?",
+    options: [
+      "Think Win-Win",
+      "Be Proactive",
+      "Sharpen the Saw",
+      "Begin with the End in Mind",
+    ],
+    answer: "Think Win-Win",
+  },
+  {
+    question: "Which habit involves continuous self-improvement?",
+    options: [
+      "Sharpen the Saw",
+      "Synergize",
+      "Seek First to Understand, Then to Be Understood",
+      "Put First Things First",
+    ],
+    answer: "Sharpen the Saw",
+  },
 ];
 
 const Game = () => {
+  // Fixed game dimensions for reference
+  const GAME_AREA = { width: GAME_WIDTH, height: GAME_HEIGHT };
+
+  // Calculate the obstacle gap as 30% of the game height
+  const OBSTACLE_GAP = GAME_AREA.height * 0.3;
+
   // Game state
   const [birdY, setBirdY] = useState(200);
   const [velocity, setVelocity] = useState(0);
@@ -111,29 +82,16 @@ const Game = () => {
   const [quizActive, setQuizActive] = useState(false);
   const [quiz, setQuiz] = useState(null);
 
-  // Window dimensions state for responsiveness
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
-  // Adjust the gap between obstacles based on height (e.g. 30% of viewport)
-  const OBSTACLE_GAP = windowHeight * 0.3;
-
-  // Update window dimensions on resize
+  // Initialize obstacles on mount
   useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-      setWindowHeight(window.innerHeight);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Initialize obstacles on mount (so that they span the whole width)
-  useEffect(() => {
-    // Create one obstacle off to the right (you can add more if desired)
+    // Create one obstacle off to the right
     setObstacles([
-      { x: windowWidth, height: Math.random() * (windowHeight - OBSTACLE_GAP) },
+      {
+        x: GAME_AREA.width,
+        height: Math.random() * (GAME_AREA.height - OBSTACLE_GAP),
+      },
     ]);
-  }, [windowWidth, windowHeight, OBSTACLE_GAP]);
+  }, [GAME_AREA.height, GAME_AREA.width, OBSTACLE_GAP]);
 
   // Handle jump button press
   const handleJump = useCallback(() => {
@@ -171,7 +129,10 @@ const Game = () => {
     setBirdY(200);
     setVelocity(0);
     setObstacles([
-      { x: windowWidth, height: Math.random() * (windowHeight - OBSTACLE_GAP) },
+      {
+        x: GAME_AREA.width,
+        height: Math.random() * (GAME_AREA.height - OBSTACLE_GAP),
+      },
     ]);
     setGameOver(false);
     setScore(0);
@@ -179,15 +140,14 @@ const Game = () => {
     setQuiz(null);
   };
 
-  // Main game loop using useEffect and setInterval
+  // Main game loop
   useEffect(() => {
-    // If game is over or a quiz is active, pause game updates
-    if (gameOver || quizActive) return;
+    if (gameOver || quizActive) return; // Pause loop if game is over or quiz is active
 
     const gameLoop = setInterval(() => {
       // Update bird position and velocity
       setBirdY((prevBirdY) =>
-        Math.min(Math.max(prevBirdY + velocity, 0), windowHeight - 30)
+        Math.min(Math.max(prevBirdY + velocity, 0), GAME_AREA.height - 30)
       );
       setVelocity((prevVelocity) => prevVelocity + GRAVITY);
 
@@ -196,16 +156,14 @@ const Game = () => {
         prevObstacles.map((obstacle) => ({ ...obstacle, x: obstacle.x - 5 }))
       );
 
-      // If the first obstacle has left the screen, recycle it:
+      // Recycle obstacles that have moved off screen
       setObstacles((prevObstacles) => {
         const firstObstacle = prevObstacles[0];
         if (firstObstacle && firstObstacle.x < -OBSTACLE_WIDTH) {
-          // Increase the score when an obstacle is passed
           setScore((prevScore) => {
             const newScore = prevScore + 1;
             // Trigger a quiz every 3 points
             if (newScore % 3 === 0) {
-              // Pick a random quiz question
               const randomQuiz =
                 quizQuestions[Math.floor(Math.random() * quizQuestions.length)];
               setQuiz(randomQuiz);
@@ -213,13 +171,11 @@ const Game = () => {
             }
             return newScore;
           });
-
-          // Remove the first obstacle and add a new one at the right edge
           return [
             ...prevObstacles.slice(1),
             {
-              x: windowWidth,
-              height: Math.random() * (windowHeight - OBSTACLE_GAP),
+              x: GAME_AREA.width,
+              height: Math.random() * (GAME_AREA.height - OBSTACLE_GAP),
             },
           ];
         }
@@ -239,7 +195,7 @@ const Game = () => {
           x: obstacle.x,
           y: obstacle.height + OBSTACLE_GAP,
           width: OBSTACLE_WIDTH,
-          height: windowHeight - obstacle.height - OBSTACLE_GAP,
+          height: GAME_AREA.height - obstacle.height - OBSTACLE_GAP,
         };
         return (
           isColliding(birdRect, obstacleRectTop) ||
@@ -247,7 +203,7 @@ const Game = () => {
         );
       });
 
-      if (collision || birdY >= windowHeight - 30) {
+      if (collision || birdY >= GAME_AREA.height - 30) {
         setGameOver(true);
       }
     }, 20);
@@ -259,17 +215,25 @@ const Game = () => {
     obstacles,
     gameOver,
     quizActive,
-    windowHeight,
-    windowWidth,
+    GAME_AREA.height,
+    GAME_AREA.width,
     OBSTACLE_GAP,
   ]);
 
   return (
-    <div className="relative w-full h-screen bg-blue-400 overflow-hidden">
+    <div
+      className="relative bg-blue-400 overflow-hidden mx-auto"
+      style={{ width: GAME_AREA.width, height: GAME_AREA.height }}
+    >
       {/* The Bird */}
       <div
-        className="absolute bg-yellow-400 h-8 w-8 rounded-full"
-        style={{ top: birdY, left: "100px" }}
+        className="absolute bg-yellow-400 rounded-full"
+        style={{
+          width: "30px",
+          height: "30px",
+          top: birdY,
+          left: "100px",
+        }}
       ></div>
 
       {/* Obstacles */}
@@ -292,7 +256,7 @@ const Game = () => {
               top: obstacle.height + OBSTACLE_GAP,
               left: obstacle.x,
               width: OBSTACLE_WIDTH,
-              height: windowHeight - obstacle.height - OBSTACLE_GAP,
+              height: GAME_AREA.height - obstacle.height - OBSTACLE_GAP,
             }}
           ></div>
         </React.Fragment>
