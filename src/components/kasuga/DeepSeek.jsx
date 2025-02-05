@@ -1,8 +1,27 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const AIResponse = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col items-center justify-center w-screen min-h-screen bg-gradient-to-r from-gray-800 via-gray-900 to-black text-white px-6 py-10">
+      {/* Preview/Next <-- / -->  buttons*/}
+      <div>
+        <button
+          className="bg-white text-black px-4 py-2 rounded-lg mr-4"
+          onClick={() => navigate("/kasuga/explanation")}
+        >
+          Anterior
+        </button>
+        <button
+          onClick={() => navigate("/kasuga/game")}
+          className="bg-white text-black px-4 py-2 rounded-lg"
+        >
+          Siguiente
+        </button>
+      </div>
+
       {/* Header */}
       <h1 className="text-3xl md:text-4xl font-extrabold mb-6 text-center animate-fade-in">
         Conversación con la IA

@@ -1,11 +1,28 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function ExplanationScreen() {
+  const navigate = useNavigate();
   {
     /* Explanation Screen */
   }
   return (
     <div className="flex flex-col items-center justify-center w-screen min-h-screen bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-white">
+      {/* Preview/Next <-- / -->  buttons*/}
+      <div>
+        <button
+          className="bg-white text-black px-4 py-2 rounded-lg mr-4"
+          onClick={() => navigate("/kasuga/deepseek")}
+        >
+          Anterior
+        </button>
+        <button
+          onClick={() => navigate("/kasuga/menu")}
+          className="bg-white text-black px-4 py-2 rounded-lg"
+        >
+          Siguiente
+        </button>
+      </div>
       <h1 className="text-5xl font-extrabold mb-12 animate-fade-in">
         Introduccion
       </h1>

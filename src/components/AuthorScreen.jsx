@@ -1,10 +1,27 @@
 import React from "react";
 import ImageCollage from "./ImageCollage";
+import { useNavigate } from "react-router-dom";
 
 function AuthorScreen() {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col items-center justify-center w-screen min-h-screen bg-gradient-to-b from-blue-600 to-purple-600 text-white px-6 py-12">
       {/* Title */}
+      {/* Preview/Next <-- / -->  buttons*/}
+      <div>
+        <button
+          className="bg-white text-black px-4 py-2 rounded-lg mr-4"
+          onClick={() => navigate("/kasuga/game")}
+        >
+          Anterior
+        </button>
+        <button
+          onClick={() => navigate("/")}
+          className="bg-white text-black px-4 py-2 rounded-lg"
+        >
+          Siguiente
+        </button>
+      </div>
       <h1 className="text-5xl font-extrabold mb-8 text-center">Sobre mí</h1>
 
       {/* Introduction */}
