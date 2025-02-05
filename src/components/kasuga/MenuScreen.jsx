@@ -20,6 +20,12 @@ function MenuScreen() {
           Introducción
         </button>
         <button
+          onClick={() => navigate("/kasuga/deepseek")}
+          className="w-full md:w-auto px-10 py-4 bg-green-500 text-white text-lg md:text-xl font-bold rounded-lg shadow-lg hover:bg-green-600 transition-all duration-300 transform hover:scale-105 mr-3"
+        >
+          DeepSeek
+        </button>
+        <button
           onClick={() => navigate("/kasuga/game")}
           className="w-full md:w-auto px-10 py-4 bg-purple-500 text-white text-lg md:text-xl font-bold rounded-lg shadow-lg hover:bg-purple-600 transition-all duration-300 transform hover:scale-105 mr-3"
         >

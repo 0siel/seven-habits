@@ -24,6 +24,7 @@ import KasugaGameScreen from "./components/kasuga/GameScreen";
 import KasugaMenuScreen from "./components/kasuga/MenuScreen";
 
 import Flappy from "./components/flappy/Flappy";
+import DeepSeek from "./components/kasuga/DeepSeek";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           />
 
           <Route path="kasuga/game" element={<Flappy />} />
+          <Route path="kasuga/deepseek" element={<DeepSeek />} />
 
           <Route path="flappy" element={<Flappy />} />
         </Routes>
