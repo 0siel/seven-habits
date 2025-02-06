@@ -16,15 +16,18 @@ import MemoryGame from "./components/seven/MemoryGame";
 {
   /* Kasuga imports */
 }
-
 import KasugaExplanationScreen from "./components/kasuga/ExplanationScreen";
-
 import KasugaGameScreen from "./components/kasuga/GameScreen";
-
 import KasugaMenuScreen from "./components/kasuga/MenuScreen";
-
 import Flappy from "./components/flappy/Flappy";
 import DeepSeek from "./components/kasuga/DeepSeek";
+
+{
+  /* Wealthy */
+}
+import WealthyMenuScreen from "./components/wealthy/Menu";
+import WealthyGame from "./components/wealthy/WealthyGame";
+import WealthyExplanation from "./components/wealthy/Explanation";
 
 function App() {
   return (
@@ -39,18 +42,18 @@ function App() {
           <Route path="seven/game" element={<GameScreen />} />
           <Route path="seven/memory" element={<MemoryGame />} />
           {/* Kasuga routes */}
-
           <Route path="kasuga/menu" element={<KasugaMenuScreen />} />
-
           <Route
             path="kasuga/explanation"
             element={<KasugaExplanationScreen />}
           />
-
           <Route path="kasuga/game" element={<Flappy />} />
           <Route path="kasuga/deepseek" element={<DeepSeek />} />
-
           <Route path="flappy" element={<Flappy />} />
+          {/*Wealthy routes */}
+          <Route path="wealthy/explanation" element={<WealthyExplanation />} />
+          <Route path="wealthy/game" element={<WealthyGame />} />
+          <Route path="wealthy/menu" element={<WealthyMenuScreen />} />
         </Routes>
       </div>
     </Router>
