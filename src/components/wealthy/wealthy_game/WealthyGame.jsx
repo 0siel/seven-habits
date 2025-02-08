@@ -1,35 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MultiplierSelection from "./MultiplierSelection";
 import QuestionScreen from "./QuestionScreen";
-import WealthyGame from "../WealthyGame";
 
-const WealthyGame = () => {
-  // Initial wealth
+const GameScreen = () => {
   const [wealth, setWealth] = useState(10000);
-  const [multiplier, setMultiplier] = useState(1); // Default: No multiplier
-  const [gameStage, setGameStage] = useState("multiplier"); // 'multiplier' -> 'question' -> 'result'
-  const [currentQuestion, setCurrentQuestion] = useState(null);
-  const [questionType, setQuestionType] = useState("regular");
+  const [multiplier, setMultiplier] = useState(1);
+  const [gameStage, setGameStage] = useState("multiplier");
+  const [questions, setQuestions] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [isGameOver, setIsGameOver] = useState(false);
 
-  // Available questions (this could be fetched from an API)
-  const questions = [
-    { id: 1, type: "regular", question: "What is 2 + 2?", options: ["3", "4", "5"], correctAnswer: "4", price: 5000 },
-    { id: 2, type: "blind", question: "What is the capital of France?", options: ["London", "Paris", "Rome"], correctAnswer: "Paris", price: 7000 },
-    { id: 3, type: "double", question: "Who discovered gravity?", options: ["Newton", "Einstein", "Tesla"], correctAnswer: "Newton", price: 0 }
-  ];
+  // Fetch and shuffle questions
+  useEffect(() => {
+    fetch("/questions.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const shuffledQuestions = shuffleArray(data);
+        setQuestions(shuffledQuestions);
+      })
+      .catch((error) => console.error("Error loading questions:", error));
+  }, []);
 
-  // Multiplier options
-  const multipliers = [
-    { value: 2, cost: 10000 },
-    { value: 5, cost: 5000 },
-    { value: 10, cost: 10000 }
-  ];
-
-  // Select a random question
-  const getRandomQuestion = () => {
-    const randomQuestion = questions[Math.floor(Math.random() * questions.length)];
-    setCurrentQuestion(randomQuestion);
-    setQuestionType(randomQuestion.type);
+  // Fisher-Yates Shuffle Algorithm to create a random order
+  const shuffleArray = (array) => {
+    let shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
   };
 
   // Handle multiplier selection
@@ -39,27 +38,49 @@ const WealthyGame = () => {
       setMultiplier(multiplierValue);
     }
     setGameStage("question");
-    getRandomQuestion();
   };
 
   // Handle answering the question
   const handleAnswer = (selectedAnswer) => {
+    const currentQuestion = questions[currentQuestionIndex];
     if (!currentQuestion) return;
 
     let newWealth = wealth;
     const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
     const questionValue = currentQuestion.price * multiplier;
 
-    if (questionType === "double") {
+    if (currentQuestion.type === "double") {
       newWealth = isCorrect ? wealth * 2 : 0;
     } else {
       newWealth = isCorrect ? wealth + questionValue : wealth - questionValue;
     }
 
     setWealth(newWealth);
-    setGameStage("multiplier"); // Restart after answering
-    setMultiplier(1); // Reset multiplier
+    setMultiplier(1);
+
+    // Move to next question or end game
+    if (currentQuestionIndex + 1 < questions.length) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setGameStage("multiplier");
+    } else {
+      setIsGameOver(true);
+    }
   };
+
+  if (isGameOver) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
+        <h1 className="text-3xl font-bold mb-4">🎉 Game Over!</h1>
+        <p className="text-lg mb-6">Final Wealth: ${wealth.toLocaleString()}</p>
+        <button
+          className="px-6 py-2 bg-green-500 hover:bg-green-600 text-white rounded font-bold"
+          onClick={() => window.location.reload()}
+        >
+          Restart Game
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
@@ -69,16 +90,24 @@ const WealthyGame = () => {
       {gameStage === "multiplier" && (
         <MultiplierSelection
           wealth={wealth}
-          multipliers={multipliers}
+          multipliers={[
+            { value: 2, cost: 5000 },
+            { value: 5, cost: 10000 },
+            { value: 10, cost: 20000 }
+          ]}
           onMultiplierSelect={handleMultiplierSelection}
         />
       )}
 
-      {gameStage === "question" && currentQuestion && (
-        <QuestionScreen question={currentQuestion} type={questionType} onAnswer={handleAnswer} />
+      {gameStage === "question" && questions.length > 0 && (
+        <QuestionScreen
+          question={questions[currentQuestionIndex]}
+          type={questions[currentQuestionIndex].type}
+          onAnswer={handleAnswer}
+        />
       )}
     </div>
   );
 };
 
-export default WealthyGame;
+export default GameScreen;

@@ -26,7 +26,7 @@ import DeepSeek from "./components/kasuga/DeepSeek";
   /* Wealthy */
 }
 import WealthyMenuScreen from "./components/wealthy/Menu";
-import WealthyGame from "./components/wealthy/WealthyGame";
+import WealthyGame from "./components/wealthy/wealthy_game/WealthyGame";
 import WealthyExplanation from "./components/wealthy/Explanation";
 
 function App() {
