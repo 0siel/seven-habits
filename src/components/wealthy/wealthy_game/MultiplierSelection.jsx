@@ -3,7 +3,7 @@ import React from "react";
 const MultiplierSelection = ({ wealth, multipliers, onMultiplierSelect }) => {
   return (
     <div className="bg-gray-800 p-6 rounded-lg shadow-md text-center">
-      <h2 className="text-xl font-semibold mb-4">Select a Multiplier</h2>
+      <h2 className="text-xl font-semibold mb-4">Selecciona un Multiplicador</h2>
       <div className="grid grid-cols-3 gap-4">
         {multipliers.map((multiplier) => (
           <button
@@ -24,7 +24,7 @@ const MultiplierSelection = ({ wealth, multipliers, onMultiplierSelect }) => {
         className="mt-4 px-6 py-2 bg-green-500 hover:bg-green-600 text-white rounded font-bold"
         onClick={() => onMultiplierSelect(1, 0)}
       >
-        Proceed without Multiplier
+        Continuar
       </button>
     </div>
   );

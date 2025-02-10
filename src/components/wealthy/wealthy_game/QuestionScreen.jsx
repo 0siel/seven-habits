@@ -21,7 +21,7 @@ const QuestionScreen = ({ question, type, onAnswer }) => {
   return (
     <div className="bg-gray-800 p-6 rounded-lg shadow-md text-center w-full max-w-md">
       {/* Show question price */}
-      <h3 className="text-lg font-semibold mb-2">💰 Question Price: ${question.price.toLocaleString()}</h3>
+      <h3 className="text-lg font-semibold mb-2">💰 Precio: ${question.price.toLocaleString()}</h3>
 
       <h2 className="text-xl font-semibold mb-4">Question</h2>
       <p className="mb-6">{question.question}</p>

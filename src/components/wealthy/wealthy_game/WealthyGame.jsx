@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import MultiplierSelection from "./MultiplierSelection";
 import QuestionScreen from "./QuestionScreen";
+import { useNavigate } from "react-router-dom";
 
 const GameScreen = () => {
+  const navigate = useNavigate();
   const [wealth, setWealth] = useState(10000);
   const [multiplier, setMultiplier] = useState(1);
   const [gameStage, setGameStage] = useState("multiplier");
@@ -71,7 +73,7 @@ const GameScreen = () => {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
         <h1 className="text-3xl font-bold mb-4">🎉 Game Over!</h1>
-        <p className="text-lg mb-6">Final Wealth: ${wealth.toLocaleString()}</p>
+        <p className="text-lg mb-6">Riqueza Final: ${wealth.toLocaleString()}</p>
         <button
           className="px-6 py-2 bg-green-500 hover:bg-green-600 text-white rounded font-bold"
           onClick={() => window.location.reload()}
@@ -84,8 +86,23 @@ const GameScreen = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
+      {/* Preview/Next <-- / -->  buttons*/}
+      <div>
+        <button
+          className="bg-white text-black px-4 py-2 rounded-lg mr-4"
+          onClick={() => navigate("/wealthy/explanation")}
+        >
+          Anterior
+        </button>
+        <button
+          onClick={() => navigate("/author")}
+          className="bg-white text-black px-4 py-2 rounded-lg"
+        >
+          Siguiente
+        </button>
+      </div>
       <h1 className="text-3xl font-bold mb-4">Quiz Game</h1>
-      <p className="text-lg mb-6">Current Wealth: ${wealth.toLocaleString()}</p>
+      <p className="text-lg mb-6">Riqueza Actual: ${wealth.toLocaleString()}</p>
 
       {gameStage === "multiplier" && (
         <MultiplierSelection
