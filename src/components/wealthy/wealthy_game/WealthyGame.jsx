@@ -73,7 +73,7 @@ const GameScreen = () => {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
         <h1 className="text-3xl font-bold mb-4">🎉 Game Over!</h1>
-        <p className="text-lg mb-6">Riqueza Final: ${wealth.toLocaleString()}</p>
+        <p className="text-lg mb-6"> Your Money: ${wealth.toLocaleString()}</p>
         <button
           className="px-6 py-2 bg-green-500 hover:bg-green-600 text-white rounded font-bold"
           onClick={() => window.location.reload()}
@@ -92,17 +92,17 @@ const GameScreen = () => {
           className="bg-white text-black px-4 py-2 rounded-lg mr-4"
           onClick={() => navigate("/wealthy/explanation")}
         >
-          Anterior
+          
         </button>
         <button
           onClick={() => navigate("/author")}
           className="bg-white text-black px-4 py-2 rounded-lg"
         >
-          Siguiente
+          
         </button>
       </div>
       <h1 className="text-3xl font-bold mb-4">Quiz Game</h1>
-      <p className="text-lg mb-6">Riqueza Actual: ${wealth.toLocaleString()}</p>
+      <p className="text-lg mb-6">Money: ${wealth.toLocaleString()}</p>
 
       {gameStage === "multiplier" && (
         <MultiplierSelection

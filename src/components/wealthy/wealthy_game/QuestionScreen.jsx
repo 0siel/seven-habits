@@ -21,7 +21,7 @@ const QuestionScreen = ({ question, type, onAnswer }) => {
   return (
     <div className="bg-gray-800 p-6 rounded-lg shadow-md text-center w-full max-w-md">
       {/* Show question price */}
-      <h3 className="text-lg font-semibold mb-2">💰 Precio: ${question.price.toLocaleString()}</h3>
+      <h3 className="text-lg font-semibold mb-2">💰 Price: ${question.price.toLocaleString()}</h3>
 
       <h2 className="text-xl font-semibold mb-4">Question</h2>
       <p className="mb-6">{question.question}</p>
@@ -29,7 +29,7 @@ const QuestionScreen = ({ question, type, onAnswer }) => {
       {/* Regular Questions */}
       {type === "regular" && (
         <div className="grid grid-cols-1 gap-4">
-          <h3 className="text-lg font-semibold">Elige una opcion😎</h3>
+          <h3 className="text-lg font-semibold">Choice an option😎</h3>
           {question.options.map((option, index) => (
             <button
               key={index}
@@ -54,7 +54,7 @@ const QuestionScreen = ({ question, type, onAnswer }) => {
       {/* Blind Questions: Show option buttons initially hidden, reveal after answering */}
       {type === "blind" && (
         <div className="grid grid-cols-1 gap-4">
-          <h3 className="text-lg font-semibold mb-4">A ciegas 🎲</h3>
+          <h3 className="text-lg font-semibold mb-4">Blind🎲</h3>
           {question.options.map((option, index) => (
             <button
               key={index}
@@ -79,7 +79,7 @@ const QuestionScreen = ({ question, type, onAnswer }) => {
       {/* Double or Nothing Questions */}
       {type === "double" && (
         <div className="grid grid-cols-1 gap-4">
-          <h3 className="text-lg font-semibold mb-4">Doble o nada 🤑</h3>
+          <h3 className="text-lg font-semibold mb-4">Double or nothing 🤑</h3>
           {question.options.map((option, index) => (
             <button
               key={index}
