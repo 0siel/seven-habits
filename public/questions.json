@@ -1,128 +1,82 @@
 [
-    {
+  {
       "id": 1,
       "type": "regular",
-      "question": "¿Cuál es el enfoque principal del documental?",
-      "options": [
-        "Los desafíos económicos en Alemania",
-        "Las vidas de los individuos ricos en Alemania",
-        "El impacto de la sobrerregulación en la industria alemana",
-        "La historia de los fabricantes de relojes de lujo alemanes"
-      ],
-      "correctAnswer": "Las vidas de los individuos ricos en Alemania",
+      "question": "Yesterday, I ____ him at the park.",
+      "options": ["was seeing", "saw", "see", "was saw"],
+      "correctAnswer": "saw",
       "price": 5000
-    },
-    {
+  },
+  {
       "id": 2,
       "type": "blind",
-      "question": "¿Cómo adquieren la mayoría de los millonarios en Alemania su riqueza, según el documental?",
-      "options": [
-        "A través del emprendimiento",
-        "A través de la herencia",
-        "A través de inversiones en tecnología",
-        "A través de bienes raíces"
-      ],
-      "correctAnswer": "A través de la herencia",
+      "question": "He ____ his bike when it started to rain.",
+      "options": ["rode", "was riding", "rides", "was rode"],
+      "correctAnswer": "was riding",
       "price": 7000
-    },
-    {
+  },
+  {
       "id": 3,
       "type": "double",
-      "question": "¿Qué dice el CEO de un fabricante de relojes de lujo sobre la industria alemana?",
-      "options": [
-        "Está prosperando",
-        "Sufre de sobrerregulación",
-        "No se ve afectada por los desafíos económicos",
-        "Necesita más apoyo del gobierno"
-      ],
-      "correctAnswer": "Sufre de sobrerregulación",
+      "question": "We ____ dinner when you called.",
+      "options": ["ate", "eaten", "were eating", "was eating"],
+      "correctAnswer": "were eating",
       "price": 0
-    },
-    {
+  },
+  {
       "id": 4,
       "type": "regular",
-      "question": "¿Cuál es una de las razones por las que los ricos en Alemania envían a sus hijos a la escuela de Salem?",
-      "options": [
-        "Para aprender sobre economía global",
-        "Para prepararlos para dirigir negocios familiares",
-        "Para evitar la atención pública",
-        "Para mejorar sus habilidades sociales"
-      ],
-      "correctAnswer": "Para prepararlos para dirigir negocios familiares",
+      "question": "While I ____ TV, my mom prepared dinner.",
+      "options": ["watched", "watching", "was watching", "watches"],
+      "correctAnswer": "was watching",
       "price": 5000
-    },
-    {
+  },
+  {
       "id": 5,
       "type": "blind",
-      "question": "¿Qué beneficio financiero disfrutan los superricos en Alemania?",
-      "options": [
-        "Mayores tasas de impuestos",
-        "Beneficios fiscales especiales",
-        "Impuesto sobre la riqueza",
-        "Subsidios del gobierno"
-      ],
-      "correctAnswer": "Beneficios fiscales especiales",
+      "question": "She was walking to school when she ____ her friend.",
+      "options": ["was meeting", "met", "meet", "meets"],
+      "correctAnswer": "met",
       "price": 7000
-    },
-    {
+  },
+  {
       "id": 6,
       "type": "double",
-      "question": "¿Cuál fue el costo estimado para el estado alemán debido a la suspensión del impuesto sobre la riqueza en 1997?",
-      "options": ["€100 mil millones", "€200 mil millones", "€380 mil millones", "€500 mil millones"],
-      "correctAnswer": "€380 mil millones",
+      "question": "It was too ____ to lift the heavy box alone.",
+      "options": ["weak", "strong", "light", "small"],
+      "correctAnswer": "weak",
       "price": 0
-    },
-    {
+  },
+  {
       "id": 7,
       "type": "regular",
-      "question": "¿Qué defiende el próspero contratista de construcción de Düsseldorf?",
-      "options": [
-        "Reducir las tasas de impuestos para los ricos",
-        "Aumentar las tasas de impuestos para los ricos",
-        "Eliminar los impuestos para los ricos",
-        "Mantener las tasas de impuestos actuales"
-      ],
-      "correctAnswer": "Aumentar las tasas de impuestos para los ricos",
+      "question": "He was ____ enough to drive a car.",
+      "options": ["old", "young", "tall", "fast"],
+      "correctAnswer": "old",
       "price": 5000
-    },
-    {
+  },
+  {
       "id": 8,
       "type": "blind",
-      "question": "¿Cuál es uno de los privilegios que disfrutan los superricos en Alemania?",
-      "options": [
-        "Mayor esperanza de vida",
-        "Educación gratuita",
-        "Riqueza ilimitada",
-        "Protección del gobierno"
-      ],
-      "correctAnswer": "Protección del gobierno",
+      "question": "The food wasn’t ____ enough, so we added more salt.",
+      "options": ["spicy", "hot", "sweet", "salty"],
+      "correctAnswer": "salty",
       "price": 7000
-    },
-    {
+  },
+  {
       "id": 9,
       "type": "double",
-      "question": "¿Cuál es la perspectiva del documental sobre la responsabilidad de los ricos?",
-      "options": [
-        "Deben evitar la atención pública",
-        "Deben invertir en infraestructura y educación",
-        "Deben centrarse en la riqueza personal",
-        "Deben apoyar impuestos más altos para ellos mismos"
-      ],
-      "correctAnswer": "Deben invertir en infraestructura y educación",
+      "question": "She wasn’t tall ____ to reach the top shelf.",
+      "options": ["more", "enough", "too", "so"],
+      "correctAnswer": "enough",
       "price": 0
-    },
-    {
+  },
+  {
       "id": 10,
       "type": "regular",
-      "question": "¿Cuál es la pregunta principal del documental sobre los ricos en Alemania?",
-      "options": [
-        "¿Continuarán prosperando?",
-        "¿Cumplirán con sus responsabilidades?",
-        "¿Invertirán en tecnología?",
-        "¿Apoyarán las políticas del gobierno?"
-      ],
-      "correctAnswer": "¿Cumplirán con sus responsabilidades?",
+      "question": "The soup was ____ hot to eat right away.",
+      "options": ["too", "enough", "not", "very"],
+      "correctAnswer": "too",
       "price": 5000
-    }
-  ]
-  
+  }
+]
