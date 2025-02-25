@@ -1,0 +1,193 @@
+[
+    {
+      "id": 1,
+      "type": "regular",
+      "question": "¿Cuál es el enfoque principal del documental?",
+      "options": [
+        "Los desafíos económicos en Alemania",
+        "Las vidas de los individuos ricos en Alemania",
+        "El impacto de la sobrerregulación en la industria alemana",
+        "La historia de los fabricantes de relojes de lujo alemanes"
+      ],
+      "correctAnswer": "Las vidas de los individuos ricos en Alemania",
+      "price": 5000
+    },
+    {
+      "id": 2,
+      "type": "blind",
+      "question": "¿Cómo adquieren la mayoría de los millonarios en Alemania su riqueza, según el documental?",
+      "options": [
+        "A través del emprendimiento",
+        "A través de la herencia",
+        "A través de inversiones en tecnología",
+        "A través de bienes raíces"
+      ],
+      "correctAnswer": "A través de la herencia",
+      "price": 7000
+    },
+    {
+      "id": 3,
+      "type": "double",
+      "question": "¿Qué dice el CEO de un fabricante de relojes de lujo sobre la industria alemana?",
+      "options": [
+        "Está prosperando",
+        "Sufre de sobrerregulación",
+        "No se ve afectada por los desafíos económicos",
+        "Necesita más apoyo del gobierno"
+      ],
+      "correctAnswer": "Sufre de sobrerregulación",
+      "price": 0
+    },
+    {
+      "id": 4,
+      "type": "regular",
+      "question": "¿Cuál es una de las razones por las que los ricos en Alemania envían a sus hijos a la escuela de Salem?",
+      "options": [
+        "Para aprender sobre economía global",
+        "Para prepararlos para dirigir negocios familiares",
+        "Para evitar la atención pública",
+        "Para mejorar sus habilidades sociales"
+      ],
+      "correctAnswer": "Para prepararlos para dirigir negocios familiares",
+      "price": 5000
+    },
+    {
+      "id": 5,
+      "type": "blind",
+      "question": "¿Qué beneficio financiero disfrutan los superricos en Alemania?",
+      "options": [
+        "Mayores tasas de impuestos",
+        "Beneficios fiscales especiales",
+        "Impuesto sobre la riqueza",
+        "Subsidios del gobierno"
+      ],
+      "correctAnswer": "Beneficios fiscales especiales",
+      "price": 7000
+    },
+    {
+      "id": 6,
+      "type": "double",
+      "question": "¿Cuál fue el costo estimado para el estado alemán debido a la suspensión del impuesto sobre la riqueza en 1997?",
+      "options": ["€100 mil millones", "€200 mil millones", "€380 mil millones", "€500 mil millones"],
+      "correctAnswer": "€380 mil millones",
+      "price": 0
+    },
+    {
+      "id": 7,
+      "type": "regular",
+      "question": "¿Qué defiende el próspero contratista de construcción de Düsseldorf?",
+      "options": [
+        "Reducir las tasas de impuestos para los ricos",
+        "Aumentar las tasas de impuestos para los ricos",
+        "Eliminar los impuestos para los ricos",
+        "Mantener las tasas de impuestos actuales"
+      ],
+      "correctAnswer": "Aumentar las tasas de impuestos para los ricos",
+      "price": 5000
+    },
+    {
+      "id": 8,
+      "type": "blind",
+      "question": "¿Cuál es uno de los privilegios que disfrutan los superricos en Alemania?",
+      "options": [
+        "Mayor esperanza de vida",
+        "Educación gratuita",
+        "Riqueza ilimitada",
+        "Protección del gobierno"
+      ],
+      "correctAnswer": "Protección del gobierno",
+      "price": 7000
+    },
+    {
+      "id": 9,
+      "type": "double",
+      "question": "¿Cuál es la perspectiva del documental sobre la responsabilidad de los ricos?",
+      "options": [
+        "Deben evitar la atención pública",
+        "Deben invertir en infraestructura y educación",
+        "Deben centrarse en la riqueza personal",
+        "Deben apoyar impuestos más altos para ellos mismos"
+      ],
+      "correctAnswer": "Deben invertir en infraestructura y educación",
+      "price": 0
+    },
+    {
+      "id": 10,
+      "type": "regular",
+      "question": "¿Cuál es la pregunta principal del documental sobre los ricos en Alemania?",
+      "options": [
+        "¿Continuarán prosperando?",
+        "¿Cumplirán con sus responsabilidades?",
+        "¿Invertirán en tecnología?",
+        "¿Apoyarán las políticas del gobierno?"
+      ],
+      "correctAnswer": "¿Cumplirán con sus responsabilidades?",
+      "price": 5000
+    },
+    {
+      "id": 1,
+      "type": "regular",
+      "question": "¿Cuál es el papel principal de los movimientos sociales según el video?",
+      "options": [
+        "Catalizar el cambio social",
+        "Mantener el status quo",
+        "Apoyar a las instituciones establecidas",
+        "Incrementar la riqueza individual"
+      ],
+      "correctAnswer": "Catalizar el cambio social",
+      "price": 5000
+    },
+    {
+      "id": 2,
+      "type": "blind",
+      "question": "¿Quiénes son los expertos que comparten sus perspectivas en el video?",
+      "options": [
+        "Ing. Raymundo Bravo Macías y Dr. José Alfredo Acuña García",
+        "Dr. Juan Pérez y Lic. María González",
+        "Prof. Carlos López y Dr. Ana Ramírez",
+        "Lic. Pedro Martínez y Ing. Laura Fernández"
+      ],
+      "correctAnswer": "Ing. Raymundo Bravo Macías y Dr. José Alfredo Acuña García",
+      "price": 7000
+    },
+    {
+      "id": 3,
+      "type": "double",
+      "question": "¿Qué desafíos enfrentan los movimientos sociales según el video?",
+      "options": [
+        "Resistencia de los sistemas establecidos",
+        "Falta de apoyo financiero",
+        "Falta de interés público",
+        "Excesiva burocracia"
+      ],
+      "correctAnswer": "Resistencia de los sistemas establecidos",
+      "price": 0
+    },
+    {
+      "id": 4,
+      "type": "regular",
+      "question": "¿Qué impacto positivo pueden tener los movimientos sociales en la sociedad?",
+      "options": [
+        "Aumentar la conciencia sobre temas importantes",
+        "Incrementar la corrupción",
+        "Disminuir la participación ciudadana",
+        "Apoyar a los grupos de poder"
+      ],
+      "correctAnswer": "Aumentar la conciencia sobre temas importantes",
+      "price": 5000
+    },
+    {
+      "id": 5,
+      "type": "blind",
+      "question": "¿Qué es lo que el video anima a los espectadores a hacer con respecto a los movimientos sociales?",
+      "options": [
+        "Reflexionar sobre su importancia",
+        "Ignorar su impacto",
+        "Criticar su existencia",
+        "Apoyar únicamente movimientos violentos"
+      ],
+      "correctAnswer": "Reflexionar sobre su importancia",
+      "price": 7000
+    }
+  ]
+  

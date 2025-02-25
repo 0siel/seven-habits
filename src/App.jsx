@@ -29,6 +29,10 @@ import WealthyMenuScreen from "./components/wealthy/Menu";
 import WealthyGame from "./components/wealthy/wealthy_game/WealthyGame";
 import WealthyExplanation from "./components/wealthy/Explanation";
 
+{/* Pareto imports */}
+import ParetoExplanation from "./components/pareto/Explanation";
+import ProblemSolver from "./components/pareto/ProblemSolver";
+
 function App() {
   return (
     <Router>
@@ -54,7 +58,13 @@ function App() {
           <Route path="wealthy/explanation" element={<WealthyExplanation />} />
           <Route path="wealthy/game" element={<WealthyGame />} />
           <Route path="wealthy/menu" element={<WealthyMenuScreen />} />
+
+          {/* Pareto routes */}
+          <Route path="pareto/explanation" element={<ParetoExplanation />} />
+          <Route path="pareto/solver" element={<ProblemSolver />} />
+
         </Routes>
+
       </div>
     </Router>
   );

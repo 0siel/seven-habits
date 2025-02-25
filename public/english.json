@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "type": "regular",
+        "question": "Yesterday, I ____ him at the park.",
+        "options": ["was seeing", "saw", "see", "was saw"],
+        "correctAnswer": "saw",
+        "price": 5000
+    },
+    {
+        "id": 2,
+        "type": "blind",
+        "question": "He ____ his bike when it started to rain.",
+        "options": ["rode", "was riding", "rides", "was rode"],
+        "correctAnswer": "was riding",
+        "price": 7000
+    },
+    {
+        "id": 3,
+        "type": "double",
+        "question": "We ____ dinner when you called.",
+        "options": ["ate", "eaten", "were eating", "was eating"],
+        "correctAnswer": "were eating",
+        "price": 0
+    },
+    {
+        "id": 4,
+        "type": "regular",
+        "question": "While I ____ TV, my mom prepared dinner.",
+        "options": ["watched", "watching", "was watching", "watches"],
+        "correctAnswer": "was watching",
+        "price": 5000
+    },
+    {
+        "id": 5,
+        "type": "blind",
+        "question": "She was walking to school when she ____ her friend.",
+        "options": ["was meeting", "met", "meet", "meets"],
+        "correctAnswer": "met",
+        "price": 7000
+    },
+    {
+        "id": 6,
+        "type": "double",
+        "question": "It was too ____ to lift the heavy box alone.",
+        "options": ["weak", "strong", "light", "small"],
+        "correctAnswer": "weak",
+        "price": 0
+    },
+    {
+        "id": 7,
+        "type": "regular",
+        "question": "He was ____ enough to drive a car.",
+        "options": ["old", "young", "tall", "fast"],
+        "correctAnswer": "old",
+        "price": 5000
+    },
+    {
+        "id": 8,
+        "type": "blind",
+        "question": "The food wasn’t ____ enough, so we added more salt.",
+        "options": ["spicy", "hot", "sweet", "salty"],
+        "correctAnswer": "salty",
+        "price": 7000
+    },
+    {
+        "id": 9,
+        "type": "double",
+        "question": "She wasn’t tall ____ to reach the top shelf.",
+        "options": ["more", "enough", "too", "so"],
+        "correctAnswer": "enough",
+        "price": 0
+    },
+    {
+        "id": 10,
+        "type": "regular",
+        "question": "The soup was ____ hot to eat right away.",
+        "options": ["too", "enough", "not", "very"],
+        "correctAnswer": "too",
+        "price": 5000
+    }
+  ]
