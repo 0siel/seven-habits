@@ -29,9 +29,15 @@ import WealthyMenuScreen from "./components/wealthy/Menu";
 import WealthyGame from "./components/wealthy/wealthy_game/WealthyGame";
 import WealthyExplanation from "./components/wealthy/Explanation";
 
-{/* Pareto imports */}
+{/* Pareto imports */ }
+import ParetoMenuScreen from "./components/pareto/Menu";
 import ParetoExplanation from "./components/pareto/Explanation";
-import ProblemSolver from "./components/pareto/ProblemSolver";
+import ProblemSolver from "./components/pareto/solver/ProblemSolver";
+import Foda from "./components/pareto/Foda";
+import SixHats from "./components/pareto/SixHats";
+import CATWDA from "./components/pareto/CATWDA";
+import Pigmalion from "./components/pareto/Pigmalion"
+
 
 function App() {
   return (
@@ -60,8 +66,13 @@ function App() {
           <Route path="wealthy/menu" element={<WealthyMenuScreen />} />
 
           {/* Pareto routes */}
-          <Route path="pareto/explanation" element={<ParetoExplanation />} />
+          <Route path="pareto/menu" element={<ParetoMenuScreen />} />
           <Route path="pareto/solver" element={<ProblemSolver />} />
+          <Route path="pareto/foda" element={<Foda />} />
+          <Route path="pareto/sixhats" element={<SixHats />} />
+          <Route path="pareto/catwda" element={<CATWDA />} />
+          <Route path="pareto/foda" element={<Foda />} />
+          <Route path="pareto/pigmalion" element={<Pigmalion />} />
 
         </Routes>
 

@@ -138,6 +138,7 @@ export default function Visualization({ causes, prevStep, nextStep }) {
       <button onClick={prevStep} className="bg-gray-500 text-white p-2 w-full">
         Back
       </button>
+      
     </div>
   );
 }

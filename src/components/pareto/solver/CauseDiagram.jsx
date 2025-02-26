@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 /**
  * Renders a fishbone-style chart for all causes and their percentages.
@@ -8,6 +9,9 @@ import React from "react";
  * @param {Function} prevStep    - Handler to go back to Step 3
  */
 export default function CauseDiagram({ problemName, causes, prevStep }) {
+
+  const navigate = useNavigate();
+
   if (!causes || causes.length === 0) {
     return (
       <div className="text-center">
@@ -205,6 +209,8 @@ export default function CauseDiagram({ problemName, causes, prevStep }) {
       >
         Back
       </button>
+      {/* Preview/Next <-- / -->  buttons*/}
+      
     </div>
   );
 }
