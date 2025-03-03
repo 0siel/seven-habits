@@ -1,10 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useToolData } from "../../../context/ToolDataContext";  // Import the context
 
 const Foda = () => {
   const navigate = useNavigate();
+  const { updateToolData, toolData } = useToolData();
+
+  const [form, setForm] = useState({
+    strengths: '',
+    opportunities: '',
+    weaknesses: '',
+    threats: ''
+  })
+
+  // Prefill if data exists
+  useEffect(() => {
+    setForm(toolData.foda)
+  }, [toolData.foda])
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  const handleSave = () => {
+    updateToolData('foda', form)  // Save to global context
+    navigate("/pareto/sixhats")  // Continue to next
+  }
+
   return (
     <div className="max-w-4xl mx-auto p-6">
+      {/* Existing FODA content */}
+      <div className="max-w-4xl mx-auto p-6">
       <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
         Análisis FODA
       </h2>
@@ -68,21 +94,42 @@ const Foda = () => {
       </div>
 
       {/* Preview/Next <-- / -->  buttons*/}
-      <div className="flex justify-center mt-6 space-x-4 ">
-        <button
-          className="bg-white text-black px-4 py-2 rounded-lg mr-4"
-          onClick={() => navigate("/pareto/menu")}
-        >
+
+    </div>
+
+      {/* New Form Section */}
+      <div className="mt-6 p-4 bg-gray-100 rounded-lg">
+        <h3 className="text-lg font-semibold">Tu Análisis FODA Personal</h3>
+        <div className="grid grid-cols-2 gap-4 mt-4">
+          {['strengths', 'opportunities', 'weaknesses', 'threats'].map((field) => (
+            <div key={field}>
+              <label className="block capitalize">{field}</label>
+              <textarea
+                name={field}
+                value={form[field]}
+                onChange={handleChange}
+                className="w-full p-2 border rounded"
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-4">
+          <button onClick={handleSave} className="bg-blue-500 text-white px-4 py-2 rounded">
+            Guardar y Continuar
+          </button>
+        </div>
+      </div>
+
+      {/* Existing Navigation Buttons */}
+      <div className="flex justify-center mt-6 space-x-4">
+        <button className="bg-white text-black px-4 py-2 rounded-lg mr-4" onClick={() => navigate("/pareto/menu")}>
           Menu
         </button>
-        <button
-          onClick={() => navigate("/pareto/sixhats")}
-          className="bg-white text-black px-4 py-2 rounded-lg"
-        >
+        <button onClick={handleSave} className="bg-white text-black px-4 py-2 rounded-lg">
           Seis sombreros 🎩
         </button>
       </div>
-
     </div>
   );
 };

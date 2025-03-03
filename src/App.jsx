@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 }
 import WelcomeScreen from "./components/WelcomeScreen";
 import AuthorScreen from "./components/AuthorScreen";
+
+
 {
   /* Seven imports */
 }
@@ -30,13 +32,16 @@ import WealthyGame from "./components/wealthy/wealthy_game/WealthyGame";
 import WealthyExplanation from "./components/wealthy/Explanation";
 
 {/* Pareto imports */ }
-import ParetoMenuScreen from "./components/pareto/Menu";
-import ParetoExplanation from "./components/pareto/Explanation";
+import ParetoMenuScreen from "./components/pareto/pages/Menu";
 import ProblemSolver from "./components/pareto/solver/ProblemSolver";
-import Foda from "./components/pareto/Foda";
-import SixHats from "./components/pareto/SixHats";
-import CATWDA from "./components/pareto/CATWDA";
-import Pigmalion from "./components/pareto/Pigmalion"
+import Foda from "./components/pareto/library/Foda";
+import SixHats from "./components/pareto/library/SixHats";
+import CATWDA from "./components/pareto/library/CATWDA";
+import Pigmalion from "./components/pareto/library/Pigmalion"
+import SolverPage from "./components/pareto/pages/SolverPage";
+import LibraryDashboardPage from "./components/pareto/pages/LibraryDashboardPage";
+import ToolLibrary from "./components/pareto/library/ToolLibrary";
+import LibraryDashboard from "./components/pareto/library/LibraryDashboard";
 
 
 function App() {

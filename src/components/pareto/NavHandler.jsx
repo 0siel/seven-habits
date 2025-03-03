@@ -3,7 +3,7 @@ import Foda from "./Foda";
 import SixHats from "./SixHats";
 import CATWDA from "./CATWDA";
 import ProblemSolver from "./ProblemSolver";
-import Pigmalion from "./Pigmalion";
+import Pigmalion from "./library/Pigmalion";
 import { useNavigate } from "react-router-dom";
 
 
