@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useToolData } from "../../../context/ToolDataContext";  // Import context
 
 const SixHats = () => {
   const navigate = useNavigate();
+  const { updateToolData, toolData } = useToolData();  // Access global state
+
+  // Form state for each hat
+  const [form, setForm] = useState({
+    white: "",
+    red: "",
+    black: "",
+    yellow: "",
+    green: "",
+    blue: ""
+  });
+
+  // Prefill with saved data if it exists (when user navigates back)
+  useEffect(() => {
+    setForm(toolData.sixHats);
+  }, [toolData.sixHats]);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSave = () => {
+    updateToolData("sixHats", form);  // Save to global state
+    navigate("/pareto/catwda");       // Move to the next tool
+  };
+
   return (
     <div className="max-w-5xl mx-auto p-6">
       <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
@@ -21,66 +48,60 @@ const SixHats = () => {
         />
       </div>
 
-      {/* Hat Sections */}
+      {/* Hat Descriptions */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* White Hat */}
-        <div className="p-4 border-2 border-gray-400 rounded-lg shadow-md bg-gray-50">
-          <h3 className="text-xl font-semibold text-gray-700">Sombrero Blanco</h3>
-          <p className="text-gray-700 mt-2">
-            Representa la **objetividad y datos**. Se enfoca en hechos, números y cifras sin opiniones personales.
-          </p>
+        {[
+          { color: "gray", name: "white", title: "Sombrero Blanco", description: "Datos y hechos objetivos." },
+          { color: "red", name: "red", title: "Sombrero Rojo", description: "Emociones e intuición." },
+          { color: "black", name: "black", title: "Sombrero Negro", description: "Pensamiento crítico y cauteloso." },
+          { color: "yellow", name: "yellow", title: "Sombrero Amarillo", description: "Pensamiento positivo y optimismo." },
+          { color: "green", name: "green", title: "Sombrero Verde", description: "Creatividad e innovación." },
+          { color: "blue", name: "blue", title: "Sombrero Azul", description: "Control y organización del proceso." }
+        ].map(({ color, name, title, description }) => (
+          <div key={name} className={`p-4 border-2 border-${color}-500 rounded-lg shadow-md bg-${color}-50`}>
+            <h3 className={`text-xl font-semibold text-${color}-700`}>{title}</h3>
+            <p className="text-gray-700 mt-2">{description}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* User Input Form */}
+      <div className="mt-8 p-4 bg-gray-100 rounded-lg shadow">
+        <h3 className="text-lg font-semibold">Tu análisis personal con los Seis Sombreros</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          {["white", "red", "black", "yellow", "green", "blue"].map((hat) => (
+            <div key={hat}>
+              <label className="block capitalize">{`Sombrero ${hat}`}</label>
+              <textarea
+                name={hat}
+                value={form[hat]}
+                onChange={handleChange}
+                className="w-full p-2 border rounded"
+              />
+            </div>
+          ))}
         </div>
 
-        {/* Red Hat */}
-        <div className="p-4 border-2 border-red-500 rounded-lg shadow-md bg-red-50">
-          <h3 className="text-xl font-semibold text-red-700">Sombrero Rojo</h3>
-          <p className="text-gray-700 mt-2">
-            Representa las **emociones e intuición**. Permite expresar sentimientos y corazonadas sin necesidad de explicaciones racionales.
-          </p>
-        </div>
-
-        {/* Black Hat */}
-        <div className="p-4 border-2 border-black rounded-lg shadow-md bg-gray-900 text-white">
-          <h3 className="text-xl font-semibold">Sombrero Negro</h3>
-          <p className="mt-2">
-            Representa el **pensamiento crítico y cauteloso**. Se centra en los riesgos, dificultades y puntos débiles.
-          </p>
-        </div>
-
-        {/* Yellow Hat */}
-        <div className="p-4 border-2 border-yellow-400 rounded-lg shadow-md bg-yellow-50">
-          <h3 className="text-xl font-semibold text-yellow-700">Sombrero Amarillo</h3>
-          <p className="text-gray-700 mt-2">
-            Representa el **pensamiento positivo y optimismo**. Se enfoca en beneficios, ventajas y oportunidades.
-          </p>
-        </div>
-
-        {/* Green Hat */}
-        <div className="p-4 border-2 border-green-500 rounded-lg shadow-md bg-green-50">
-          <h3 className="text-xl font-semibold text-green-700">Sombrero Verde</h3>
-          <p className="text-gray-700 mt-2">
-            Representa la **creatividad e innovación**. Permite explorar nuevas ideas, soluciones y alternativas.
-          </p>
-        </div>
-
-        {/* Blue Hat */}
-        <div className="p-4 border-2 border-blue-500 rounded-lg shadow-md bg-blue-50">
-          <h3 className="text-xl font-semibold text-blue-700">Sombrero Azul</h3>
-          <p className="text-gray-700 mt-2">
-            Representa el **control y organización** del proceso de pensamiento. Coordina y dirige la discusión.
-          </p>
+        <div className="mt-4">
+          <button
+            onClick={handleSave}
+            className="bg-blue-500 text-white px-4 py-2 rounded"
+          >
+            Guardar y Continuar
+          </button>
         </div>
       </div>
-      {/* Preview/Next <-- / -->  buttons*/}
-      < div className="flex justify-center mt-6 space-x-4 ">
+
+      {/* Navigation Buttons */}
+      <div className="flex justify-center mt-6 space-x-4">
         <button
-          className="bg-white text-black px-4 py-2 rounded-lg mr-4"
+          className="bg-white text-black px-4 py-2 rounded-lg"
           onClick={() => navigate("/pareto/foda")}
         >
-          Foda
+          FODA
         </button>
         <button
-          onClick={() => navigate("/pareto/catwda")}
+          onClick={handleSave}
           className="bg-white text-black px-4 py-2 rounded-lg"
         >
           CATWDA

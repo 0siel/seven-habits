@@ -202,6 +202,7 @@ export default function CauseDiagram({ problemName, causes, prevStep }) {
           ))}
         </svg>
       </div>
+      {/* Preview/Next <-- / -->  buttons*/}
 
       <button
         onClick={prevStep}
@@ -209,7 +210,14 @@ export default function CauseDiagram({ problemName, causes, prevStep }) {
       >
         Back
       </button>
-      {/* Preview/Next <-- / -->  buttons*/}
+      <button
+          className="bg-white text-black px-4 py-2 rounded-lg"
+          onClick={() => navigate("/pareto/library")}
+        >
+          Library
+        </button>
+      
+
       
     </div>
   );

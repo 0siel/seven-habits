@@ -44,6 +44,10 @@ import ToolLibrary from "./components/pareto/library/ToolLibrary";
 import LibraryDashboard from "./components/pareto/library/LibraryDashboard";
 
 
+{/* Tech power imports */ }
+import MindMap from "./components/faang/MindMap";
+
+
 function App() {
   return (
     <Router>
@@ -78,6 +82,14 @@ function App() {
           <Route path="pareto/catwda" element={<CATWDA />} />
           <Route path="pareto/foda" element={<Foda />} />
           <Route path="pareto/pigmalion" element={<Pigmalion />} />
+          <Route path="pareto/solver" element={<SolverPage />} />
+          
+          <Route path="pareto/tools" element={<ToolLibrary />} /> 
+          <Route path="pareto/library" element={<LibraryDashboardPage />} />
+
+          {/* Tech power routes */}
+          <Route path="faang/mindmap" element={<MindMap />}
+          />
 
         </Routes>
 

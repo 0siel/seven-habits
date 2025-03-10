@@ -101,7 +101,7 @@ const Foda = () => {
       <div className="mt-6 p-4 bg-gray-100 rounded-lg">
         <h3 className="text-lg font-semibold">Tu Análisis FODA Personal</h3>
         <div className="grid grid-cols-2 gap-4 mt-4">
-          {['strengths', 'opportunities', 'weaknesses', 'threats'].map((field) => (
+          {['', 'opportunities', 'weaknesses', 'threats'].map((field) => (
             <div key={field}>
               <label className="block capitalize">{field}</label>
               <textarea
