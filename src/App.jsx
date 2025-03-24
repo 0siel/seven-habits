@@ -43,6 +43,12 @@ import LibraryDashboardPage from "./components/pareto/pages/LibraryDashboardPage
 import ToolLibrary from "./components/pareto/library/ToolLibrary";
 import LibraryDashboard from "./components/pareto/library/LibraryDashboard";
 
+{/* Empresarios imports */ }
+import MenuScreen from "./components/empresarios/Menu";
+import TablaScreen from "./components/empresarios/Tabla";
+import PerfectoScreen from "./components/empresarios/Perfecto";
+import WomenITScreen from "./components/empresarios/Womenit";
+
 
 {/* Tech power imports */ }
 import MindMap from "./components/faang/MindMap";
@@ -90,6 +96,14 @@ function App() {
           {/* Tech power routes */}
           <Route path="faang/mindmap" element={<MindMap />}
           />
+
+
+          {/* Empresarios routes */}
+          <Route path="empresarios/menu" element={<MenuScreen />} />
+          <Route path="empresarios/tabla" element={<TablaScreen />} />
+          <Route path="empresarios/perfecto" element={<PerfectoScreen />} />
+          <Route path="empresarios/womenit" element={<WomenITScreen />} />
+          
 
         </Routes>
 

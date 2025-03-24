@@ -47,7 +47,14 @@ function WelcomeScreen() {
         className="mt-10 px-8 py-4 bg-black text-blue-600 text-lg font-bold rounded-lg shadow-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
       >
         Tech Power
-      </button> 
+      </button>
+      <button
+        onClick={() => navigate("/empresarios/menu")}
+        className="mt-10 px-8 py-4 bg-black text-blue-600 text-lg font-bold rounded-lg shadow-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
+      >
+        Empresarios Mexicanos + Women IT
+      </button>
+      
     </div>
   );
 }
