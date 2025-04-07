@@ -49,6 +49,11 @@ import TablaScreen from "./components/empresarios/Tabla";
 import PerfectoScreen from "./components/empresarios/Perfecto";
 import WomenITScreen from "./components/empresarios/Womenit";
 
+{/* Books imports */ }
+import Books from "./components/libros/Libros";
+import Fixed from "./components/libros/Fixed";
+import Adventure from "./components/libros/Adventure";
+
 
 {/* Tech power imports */ }
 import MindMap from "./components/faang/MindMap";
@@ -103,6 +108,11 @@ function App() {
           <Route path="empresarios/tabla" element={<TablaScreen />} />
           <Route path="empresarios/perfecto" element={<PerfectoScreen />} />
           <Route path="empresarios/womenit" element={<WomenITScreen />} />
+
+          {/* Books routes */}
+          <Route path="books" element={<Books />} />
+          <Route path="books/fixed" element={<Fixed />} />
+          <Route path="books/adventure" element={<Adventure />} />
           
 
         </Routes>

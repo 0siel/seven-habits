@@ -1,0 +1,89 @@
+{
+  "temas": {
+    "ingreso básico universal": ["Utopía para realistas"],
+    "reducción de horas laborales": ["Utopía para realistas"],
+    "fronteras abiertas e inmigración": ["Utopía para realistas"],
+    "reducción de la pobreza e innovación social": ["Utopía para realistas"],
+    "automatización e impactos tecnológicos": ["Utopía para realistas"],
+    "experimentos históricos utópicos": ["Utopía para realistas"],
+    "optimismo social hacia el futuro": ["Utopía para realistas"],
+
+    "mitos sobre el libre mercado": ["23 cosas que no te cuentan sobre el capitalismo"],
+    "desregulación de los mercados financieros": ["23 cosas que no te cuentan sobre el capitalismo"],
+    "límites de la globalización y comercio libre": ["23 cosas que no te cuentan sobre el capitalismo"],
+    "mitos económicos sobre países ricos vs pobres": ["23 cosas que no te cuentan sobre el capitalismo"],
+    "importancia de la manufactura": ["23 cosas que no te cuentan sobre el capitalismo"],
+    "crítica a salarios gerenciales excesivos": ["23 cosas que no te cuentan sobre el capitalismo"],
+    "educación y prosperidad económica": ["23 cosas que no te cuentan sobre el capitalismo"],
+
+    "instituciones inclusivas vs extractivas": ["Por qué fracasan los países"],
+    "impacto institucional en la innovación": ["Por qué fracasan los países"],
+    "dependencia histórica del camino recorrido": ["Por qué fracasan los países"],
+    "interacción político-económica institucional": ["Por qué fracasan los países"],
+    "derechos de propiedad y estado de derecho": ["Por qué fracasan los países"],
+    "crítica al determinismo geográfico": ["Por qué fracasan los países"],
+    "destrucción creativa": ["Por qué fracasan los países"],
+
+    "crítica al absolutismo del libre mercado": [
+      "Utopía para realistas",
+      "23 cosas que no te cuentan sobre el capitalismo"
+    ],
+    "desigualdad económica y sus consecuencias": [
+      "Utopía para realistas",
+      "23 cosas que no te cuentan sobre el capitalismo"
+    ],
+    "crítica a la economía del derrame": [
+      "Utopía para realistas",
+      "23 cosas que no te cuentan sobre el capitalismo"
+    ],
+
+    "importancia de la intervención gubernamental": [
+      "23 cosas que no te cuentan sobre el capitalismo",
+      "Por qué fracasan los países"
+    ],
+    "innovación y emprendimiento": [
+      "23 cosas que no te cuentan sobre el capitalismo",
+      "Por qué fracasan los países"
+    ],
+
+    "cooperación democrática": [
+      "Utopía para realistas",
+      "Por qué fracasan los países"
+    ],
+    "reforma estructural de los estados": [
+      "Utopía para realistas",
+      "Por qué fracasan los países"
+    ],
+
+    "ejemplos históricos que respaldan teorías": [
+      "Utopía para realistas",
+      "23 cosas que no te cuentan sobre el capitalismo",
+      "Por qué fracasan los países"
+    ],
+    "rol de las instituciones en la prosperidad": [
+      "Utopía para realistas",
+      "23 cosas que no te cuentan sobre el capitalismo",
+      "Por qué fracasan los países"
+    ],
+    "desigualdad y pobreza": [
+      "Utopía para realistas",
+      "23 cosas que no te cuentan sobre el capitalismo",
+      "Por qué fracasan los países"
+    ],
+    "concepciones erróneas sobre crecimiento económico": [
+      "Utopía para realistas",
+      "23 cosas que no te cuentan sobre el capitalismo",
+      "Por qué fracasan los países"
+    ],
+    "importancia del contexto histórico": [
+      "Utopía para realistas",
+      "23 cosas que no te cuentan sobre el capitalismo",
+      "Por qué fracasan los países"
+    ],
+    "rol de las políticas económicas y planificación": [
+      "Utopía para realistas",
+      "23 cosas que no te cuentan sobre el capitalismo",
+      "Por qué fracasan los países"
+    ]
+  }
+}
