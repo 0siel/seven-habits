@@ -12,17 +12,16 @@ const BOOK_FAIL = "Por qué fracasan los países";
 
 // Mapeo de imágenes para cada escena (cambia aquí fácilmente tus imágenes)
 const sceneImages = {
-  inicio: "/inicio.png",
-  fundacion: "/fundacion.png",
-  ingresoBasico: "/ingresobasico.png",
+  inicio: "/images/inicio.png",
+  fundacion: "/images/fundacion.png",
+  ingresoBasico: "/images/ingresobasico.png",
   industrializacion: "/industrializacion.png",
-  institucionesInclusivas: "/institucionesinclusivas.png",
-  jornadaLaboral: "https://picsum.photos/id/1025/800/400",
-  educacionTecnica: "https://picsum.photos/id/1031/800/400",
-  regulacionMercados: "https://picsum.photos/id/1035/800/400",
-  aperturaFronteras: "https://picsum.photos/id/1041/800/400",
-  constitucion: "https://picsum.photos/id/1045/800/400",
-  participacionCiudadana: "https://picsum.photos/id/1050/800/400",
+  institucionesInclusivas: "/images/institucionesinclusivas.png",
+  jornadaLaboral: "/images/jornadalaboral.png",
+  educacionTecnica: "/images/educaciontecnica.png",
+  aperturaFronteras: "/images/aperturafronteras.png",
+  constitucion: "/images/constitucion.png",
+  participacionCiudadana: "/images/participacionciudadana.png",
   subsidiosInnovacion: "https://picsum.photos/id/1055/800/400",
   investigacion: "https://picsum.photos/id/1060/800/400",
   tratadosComercio: "https://picsum.photos/id/1065/800/400",
@@ -256,7 +255,7 @@ export default function AdventureGame() {
         <img
           src={sceneImages[currentScene.id]}
           alt={`Escena ${currentScene.id}`}
-          className="w-full h-64 object-cover"
+          className="h-full object-contain"
         />
         <div className="p-6">
           <h2 className="text-2xl font-serif font-bold text-gray-800 mb-4">
@@ -271,7 +270,7 @@ export default function AdventureGame() {
               <button
                 key={idx}
                 onClick={() => handleChoice(choice.nextId)}
-                className="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded shadow transition duration-300 ease-in-out font-semibold"
+                className="w-full py-2 px-4 bg-amber-600/75 hover:bg-green-700/60 text-white rounded shadow transition duration-300 ease-in-out font-semibold"
               >
                 {choice.text}
               </button>
@@ -280,7 +279,7 @@ export default function AdventureGame() {
 
           {currentScene.choices.length === 0 && (
             <div className="mt-4 text-center text-green-700 font-semibold">
-              ¡Gracias por jugar! Refleja sobre los caminos que escogiste.
+              ¡Gracias por jugar! Reflexiona sobre los caminos que escogiste.
             </div>
           )}
         </div>
