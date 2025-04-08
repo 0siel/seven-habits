@@ -50,8 +50,9 @@ import PerfectoScreen from "./components/empresarios/Perfecto";
 import WomenITScreen from "./components/empresarios/Womenit";
 
 {/* Books imports */ }
+import Menu from "./components/libros/Menu";
+import BooksIntro from "./components/libros/Intro";
 import Books from "./components/libros/Libros";
-import Fixed from "./components/libros/Fixed";
 import Adventure from "./components/libros/Adventure";
 
 
@@ -110,8 +111,9 @@ function App() {
           <Route path="empresarios/womenit" element={<WomenITScreen />} />
 
           {/* Books routes */}
-          <Route path="books" element={<Books />} />
-          <Route path="books/fixed" element={<Fixed />} />
+          <Route path="books" element={<Menu />} />
+          <Route path="books/intro" element={<BooksIntro />} />
+          <Route path="books/cards" element={<Books />} />
           <Route path="books/adventure" element={<Adventure />} />
           
 

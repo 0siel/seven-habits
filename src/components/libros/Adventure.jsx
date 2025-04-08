@@ -15,18 +15,18 @@ const sceneImages = {
   inicio: "/images/inicio.png",
   fundacion: "/images/fundacion.png",
   ingresoBasico: "/images/ingresobasico.png",
-  industrializacion: "/industrializacion.png",
+  industrializacion: "/images/industrializacion.png",
   institucionesInclusivas: "/images/institucionesinclusivas.png",
   jornadaLaboral: "/images/jornadalaboral.png",
   educacionTecnica: "/images/educaciontecnica.png",
   aperturaFronteras: "/images/aperturafronteras.png",
   constitucion: "/images/constitucion.png",
   participacionCiudadana: "/images/participacionciudadana.png",
-  subsidiosInnovacion: "https://picsum.photos/id/1055/800/400",
-  investigacion: "https://picsum.photos/id/1060/800/400",
+  subsidiosInnovacion: "/images/subsidiosinnovacion.png",
+  investigacion: "/images/investigacion.png",
   tratadosComercio: "https://picsum.photos/id/1065/800/400",
-  final_positivo: "https://picsum.photos/id/1070/800/400",
-  final_mixto: "https://picsum.photos/id/1080/800/400"
+  final_positivo: "/images/final_positivo.png",
+  final_mixto: "/images/final_mixto.png",
 };
 
 // Estructura novelística de las escenas
