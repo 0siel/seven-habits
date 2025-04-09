@@ -25,8 +25,8 @@ const sceneImages = {
   subsidiosInnovacion: "/images/subsidiosinnovacion.png",
   investigacion: "/images/investigacion.png",
   tratadosComercio: "/images/tratadoscomercio.png",
-  final_positivo: "/images/final_positivo.png",
-  final_mixto: "/images/final_mixto.png",
+  final_positivo: "/images/finalpositivo.png",
+  final_mixto: "/images/finalmixto.png",
 };
 
 // Estructura novelística de las escenas
@@ -234,12 +234,15 @@ const SCENES = [
 // Componente principal
 export default function AdventureGame() {
   const [currentSceneId, setCurrentSceneId] = useState("inicio");
+  
 
   const currentScene = SCENES.find((scene) => scene.id === currentSceneId);
 
   const handleChoice = (nextId) => {
     setCurrentSceneId(nextId);
   };
+
+  
 
   if (!currentScene) {
     return (

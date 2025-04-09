@@ -34,7 +34,9 @@ function Menu() {
         </button>
 
         <button
-          onClick={() => navigate("/books/sac")}
+          onClick={() => (window.location.href =
+            "https://forms-platform.vercel.app/form/cm96l2j65000xua0otuvy5y3k")
+            }
           className="px-10 py-4 bg-gray-800 text-white text-xl font-bold rounded-lg shadow-lg hover:bg-gray-900 transition-all duration-300 transform hover:scale-105"
         >
           SAC 2025
