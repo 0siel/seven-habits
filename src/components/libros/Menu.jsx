@@ -20,10 +20,10 @@ function Menu() {
           Introducción
         </button>
         <button
-          onClick={() => navigate("/books/cards")}
+          onClick={() => navigate("/books/mexico")}
           className="px-10 py-4 bg-purple-500 text-white text-xl font-bold rounded-lg shadow-lg hover:bg-purple-600 transition-all duration-300 transform hover:scale-105"
         >
-          Desglose de temas
+          Mexico
         </button>
 
         <button

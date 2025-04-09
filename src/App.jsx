@@ -54,6 +54,7 @@ import Menu from "./components/libros/Menu";
 import BooksIntro from "./components/libros/Intro";
 import Books from "./components/libros/Libros";
 import Adventure from "./components/libros/Adventure";
+import Mexico from "./components/libros/Mexico";
 
 
 {/* Tech power imports */ }
@@ -115,6 +116,8 @@ function App() {
           <Route path="books/intro" element={<BooksIntro />} />
           <Route path="books/cards" element={<Books />} />
           <Route path="books/adventure" element={<Adventure />} />
+          <Route path="books/mexico" element={<Mexico />} />
+
           
 
         </Routes>

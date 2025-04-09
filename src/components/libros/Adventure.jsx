@@ -24,7 +24,7 @@ const sceneImages = {
   participacionCiudadana: "/images/participacionciudadana.png",
   subsidiosInnovacion: "/images/subsidiosinnovacion.png",
   investigacion: "/images/investigacion.png",
-  tratadosComercio: "https://picsum.photos/id/1065/800/400",
+  tratadosComercio: "/images/tratadoscomercio.png",
   final_positivo: "/images/final_positivo.png",
   final_mixto: "/images/final_mixto.png",
 };
