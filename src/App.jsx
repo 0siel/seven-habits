@@ -60,6 +60,9 @@ import Mexico from "./components/libros/Mexico";
 {/* Tech power imports */ }
 import MindMap from "./components/faang/MindMap";
 
+{/* Superhabilidades imports */ }
+import FlashCardCollage from "./components/superhabilidades/FlashCardCollage";
+
 
 function App() {
   return (
@@ -117,6 +120,9 @@ function App() {
           <Route path="books/cards" element={<Books />} />
           <Route path="books/adventure" element={<Adventure />} />
           <Route path="books/mexico" element={<Mexico />} />
+
+          {/* Superhabilidades routes */}
+          <Route path="/superhabilidades" element={<FlashCardCollage />} />
 
           
 
