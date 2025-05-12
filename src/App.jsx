@@ -63,6 +63,12 @@ import MindMap from "./components/faang/MindMap";
 {/* Superhabilidades imports */ }
 import FlashCardCollage from "./components/superhabilidades/FlashCardCollage";
 
+{/* Quinta Disciplina imports */ }
+import ArquetiposSistemicos from "./components/disciplina/ArquetiposSistemicos";
+import QuintaDisciplina from "./components/disciplina/QuintaDisciplina";
+
+{/* CSS imports */ }
+
 
 function App() {
   return (
@@ -124,6 +130,11 @@ function App() {
           {/* Superhabilidades routes */}
           <Route path="/superhabilidades" element={<FlashCardCollage />} />
 
+          {/* Quinta Disciplina routes */}
+          <Route path="/disciplina" element={<ArquetiposSistemicos />} />
+          <Route path="/disciplina/resumen" element={<QuintaDisciplina />} />
+
+          {/* Kasuga routes */}
           
 
         </Routes>
